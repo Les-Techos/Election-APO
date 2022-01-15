@@ -1,23 +1,23 @@
 package Scrutin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Personne.*;
 
 public abstract class Scrutin {
 
-    private List<Electeur> electeurs = null;
-    private List<Candidat> candidats = null;
+    protected List<Electeur> electeurs = null;
+    protected List<Candidat> candidats = null;
 
     public Scrutin(final List<Electeur> electeurs, final List<Candidat> candidats) throws Exception{
-            this.electeurs = electeurs;
-            this.candidats = candidats;
-            try {
-                verifieTableaux(electeurs, candidats);
-            } catch (Exception e) {
-                throw e;
-            } // Vérifie si les List sont vides
-
+        try {
+            verifieTableaux(electeurs, candidats);
+        } catch (Exception e) {
+            throw e;
+        } // Vérifie si les List sont vides
+        this.electeurs = new ArrayList<Electeur>(electeurs);
+        this.candidats = new ArrayList<Candidat>(candidats);
     }
 
     
