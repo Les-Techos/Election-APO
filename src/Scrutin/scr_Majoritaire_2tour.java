@@ -3,6 +3,7 @@ package Scrutin;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import Scrutin.*;
 
 import Personne.Candidat;
 import Personne.Electeur;
@@ -17,33 +18,26 @@ public class scr_Majoritaire_2tour extends Scrutin{
     @Override
     public List<Candidat> getClassementCandidat(){
         // TODO Auto-generated method stub
+        Scrutin sc1t =null;
+
+        try {
+        sc1t = new scr_Majoritaire_1tour(electeurs, candidats);
+        }
+        catch (Exception e) {} // on est jamais censé rentrer dedans
         
-        List<Candidat> candidates_res2t = new ArrayList<Candidat>(); // Résultat de la fonction
-        
-        List<Candidat> candidates_res1t = new ArrayList<Candidat>();
+        List<Candidat> candidates_res1t = sc1t.getClassementCandidat();
         List<Candidat> candidates_2best = new ArrayList<Candidat>();
-        List<Candidat> candidates_disponibles = new ArrayList<Candidat>(candidats); // Candidat au éléction
-
-        for (Electeur e : electeurs) {// for each des electeurs
-            Candidat c = e.votePour(candidates_disponibles);
-            c.setNbVoies(c.getNbVoies() + 1);
-        }
-        // trouve le candidat avec le plus de voies
         
-        int classement_candidat = candidates_disponibles.size();
-        Candidat dernier_candidat = Collections.max(candidates_disponibles);  
-        candidates_res1t.set(classement_candidat, dernier_candidat);
         
+        candidates_2best.add(candidates_res1t.get(0));
+        candidates_2best.add(candidates_res1t.get(1));
 
-        for (Electeur e : electeurs) {// for each des electeurs
-            Candidat c = e.votePour(candidates_res1t);
-            c.setNbVoies(c.getNbVoies() + 1);
+        try {
+        sc1t = new scr_Majoritaire_1tour(electeurs, candidates_2best);
         }
-        int classement_candidat_2t = candidates_disponibles.size();
-        Candidat dernier_candidat_2t = Collections.max(candidates_disponibles);  
-        candidates_res2t.set(classement_candidat, dernier_candidat);
-
-        return candidates_res2t;
+        catch (Exception e) {} // on est jamais censé rentrer dedans
+    
+        return sc1t.getClassementCandidat();
     }
     
 }
