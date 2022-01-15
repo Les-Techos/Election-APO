@@ -5,6 +5,7 @@ import java.util.List;
 
 import Personne.Candidat;
 import Personne.Electeur;
+import java.util.Collections;
 
 public class scr_Majoritaire_1tour extends Scrutin {
 
@@ -16,8 +17,6 @@ public class scr_Majoritaire_1tour extends Scrutin {
 
     @Override
     public List<Candidat> getClassementCandidat() {
-        
-     
 
         List<Candidat> candidates_res = new ArrayList<Candidat>(); // Résultat de la fonction
         List<Candidat> candidates_disponibles = new ArrayList<Candidat>(candidats); // Candidat au éléction
@@ -27,13 +26,11 @@ public class scr_Majoritaire_1tour extends Scrutin {
             c.setNbVoies(c.getNbVoies() + 1);
         }
         // trouve le candidat avec le plus de voies
-        int classement_candidat = candidates_disponibles.size() - 1;
-        Candidat dernier_candidat = candidates_disponibles.get(classement_candidat);
-
+        int classement_candidat = candidates_disponibles.size();
+        Candidat dernier_candidat = Collections.max(candidates_disponibles);  
         candidates_res.set(classement_candidat, dernier_candidat);
-        return candidates_res;
 
-        
+        return candidates_res;
     }
 
 }
