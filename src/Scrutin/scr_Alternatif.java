@@ -8,6 +8,7 @@ import Personne.Electeur;
 
 public class scr_Alternatif extends Scrutin {
 
+   
     @Override
     public List<Candidat> getClassementCandidat(final List<Electeur> electeurs, final List<Candidat> candidats) throws Exception {
         try{ verifieTableaux(electeurs, candidats); } catch(Exception e){ throw e;} //Vérifie si les List sont vides
@@ -29,5 +30,7 @@ public class scr_Alternatif extends Scrutin {
         }
         
         return candidates_res;
-    }    
+    }
+
+   
 }

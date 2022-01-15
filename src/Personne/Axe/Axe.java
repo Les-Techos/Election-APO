@@ -6,6 +6,11 @@ public class Axe {
     private String nom;
     private double valeur;
 
+
+    /*
+        Constructeur de l'axe 
+        
+    */
     public Axe(String nom, double valeur) throws Exception{
         this.nom = nom;
         try{

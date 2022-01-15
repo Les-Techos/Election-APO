@@ -9,12 +9,17 @@ public abstract class Scrutin {
     private List<Electeur> electeurs = null;
     private List<Candidat> candidats = null;
 
-    public Scrutin(final List<Electeur> electeurs, final List<Candidat> candidats) {
+    public Scrutin(final List<Electeur> electeurs, final List<Candidat> candidats) throws Exception{
+            this.electeurs = electeurs;
+            this.candidats = candidats;
+            try {
+                verifieTableaux(electeurs, candidats);
+            } catch (Exception e) {
+                throw e;
+            } // Vérifie si les List sont vides
 
     }
 
-    public Scrutin() {
-    }
     
     public void verifieTableaux(final List<Electeur> electeurs, final List<Candidat> candidats) throws Exception{
         if(electeurs.size() == 0) throw new Exception("Tableau d'électeurs vide");
@@ -22,8 +27,7 @@ public abstract class Scrutin {
     }
 
     public abstract List<Candidat> getClassementCandidat();
-    public abstract List<Candidat> getClassementCandidat(final List<Electeur> electeurs, final List<Candidat> candidats) throws Exception;
-
+   
     public List<Electeur> getElecteurs() {
         return electeurs;
     }
