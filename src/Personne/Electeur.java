@@ -1,9 +1,10 @@
 package Personne;
 
 import Personne.Axe.Axe;
+import java.util.List;
 
 public class Electeur implements Personne {
-    private static double appetance = 0.5;
+    private static double distanceMax = 0.5;
     Axe pouvoir_achat, ecologie;
     
 
@@ -23,15 +24,30 @@ public class Electeur implements Personne {
     }
 
     public boolean isNearBy(final Electeur p){
-        return getDistanceA(p) < appetance;
+        return getDistanceA(p) < distanceMax;
     }
 
-    public static double getAppetance() {
-        return appetance;
+    public Candidat votePour(List<Candidat> candidats){ /* A compléter !*/
+        Candidat choisi = null;
+        double distanceMin = Double.POSITIVE_INFINITY;
+
+        for(Candidat c : candidats){
+            double currDistance = getDistanceA(c);
+            if(isNearBy(c) && currDistance < distanceMin){
+                choisi = c;
+                distanceMin = currDistance;
+            }
+        }
+
+        return choisi;
+    }
+    
+    public static double getDistanceMax() {
+        return distanceMax;
     }
 
-    public static void setAppetance(double appetance) {
-        Electeur.appetance = appetance;
+    public static void setDistanceMax(double distanceMax) {
+        Electeur.distanceMax = distanceMax;
     }
 
     @Override

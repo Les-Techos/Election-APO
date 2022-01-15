@@ -1,15 +1,22 @@
+import java.util.ArrayList;
+
 import Personne.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Candidat p;
-        Electeur p2;
+        ArrayList<Candidat> c = new ArrayList<Candidat>();
+        ArrayList<Electeur> e = new ArrayList<Electeur>();
         try{
-            p = new Candidat(0.5, 0.5);
-            p2 = new Electeur(0.1, 0.1);
-            if(p.isNearBy(p2)) System.out.println("Il sont tout près");
-        }catch(Exception e){
-            e.printStackTrace();
+            for(int i = 0; i < 10; i++){
+                c.add(new Candidat(Math.random(),Math.random()));
+                e.add(new Electeur(Math.random(),Math.random()));
+            }
+            for(Electeur elect : e){
+                System.out.println(elect);System.out.println(elect.votePour(c));
+            }
+            
+        }catch(Exception err){
+            err.printStackTrace();
         }
     }
 }
