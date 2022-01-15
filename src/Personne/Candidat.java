@@ -1,16 +1,12 @@
 package Personne;
 
-import java.util.Comparator;
 import java.util.List;
-
-import Personne.Axe.*;
 
 public class Candidat extends Electeur implements Comparable{
     int nbVoies = 0;
 
     @Override
     public int compareTo(Object c) {
-        // TODO Auto-generated method stub
         if(c instanceof Candidat){
             return nbVoies - ((Candidat)c).nbVoies;
         }

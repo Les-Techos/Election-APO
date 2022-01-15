@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import Personne.*;
+import Scrutin.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,9 +12,8 @@ public class App {
                 c.add(new Candidat(Math.random(),Math.random()));
                 e.add(new Electeur(Math.random(),Math.random()));
             }
-            for(Electeur elect : e){
-                System.out.println(elect);System.out.println(elect.votePour(c));
-            }
+            scr_Alternatif sa = new scr_Alternatif();
+            
             
         }catch(Exception err){
             err.printStackTrace();
