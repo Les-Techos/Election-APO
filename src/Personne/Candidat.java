@@ -1,5 +1,6 @@
 package Personne;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Candidat extends Electeur implements Comparable<Candidat>{
@@ -27,6 +28,14 @@ public class Candidat extends Electeur implements Comparable<Candidat>{
 
     public static void resetNbVoies(List<Candidat> candidats){
         for(Candidat c : candidats) c.setNbVoies(0);
+    }
+
+    public static List<Candidat> cloneList(List<Candidat> ls){
+        List<Candidat> res = new ArrayList<Candidat>(); // Résultat de la fCandidat au élection
+        try{
+            for(Candidat c : ls) res.add((Candidat)c.clone());
+        }catch(CloneNotSupportedException e){}
+        return res;
     }
 
     @Override

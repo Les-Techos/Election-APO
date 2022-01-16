@@ -20,10 +20,7 @@ public class scr_Majoritaire_1tour extends Scrutin {
     public List<Candidat> getClassementCandidat() {
 
         List<Candidat> candidates_res = new ArrayList<Candidat>(); // Résultat de la fonction
-        List<Candidat> candidates_disponibles = new ArrayList<Candidat>(); // Résultat de la fCandidat au élection
-        try{
-            for(Candidat c : candidats) candidates_disponibles.add((Candidat)c.clone());
-        }catch(CloneNotSupportedException e){}
+        List<Candidat> candidates_disponibles = Candidat.cloneList(candidats);
 
         for (Electeur e : electeurs) {// for each des electeurs
             Candidat c = e.votePour(candidates_disponibles);
