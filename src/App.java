@@ -12,7 +12,7 @@ public class App {
                 c.add(new Candidat(Math.random(),Math.random()));
                 e.add(new Electeur(Math.random(),Math.random()));
             }
-            scr_Alternatif sa = new scr_Alternatif(e, c);
+            Scrutin sa = new scr_Majoritaire_1tour(e, c);
             System.out.println(sa.getClassementCandidat());
             System.out.println(sa.getClassementCandidat());
         }catch(Exception err){

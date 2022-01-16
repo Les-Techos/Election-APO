@@ -1,6 +1,7 @@
 package Scrutin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import Personne.Candidat;
@@ -19,7 +20,10 @@ public class scr_Majoritaire_1tour extends Scrutin {
     public List<Candidat> getClassementCandidat() {
 
         List<Candidat> candidates_res = new ArrayList<Candidat>(); // Résultat de la fonction
-        List<Candidat> candidates_disponibles = new ArrayList<Candidat>(candidats); // Candidat au éléction
+        List<Candidat> candidates_disponibles = new ArrayList<Candidat>(); // Résultat de la fCandidat au élection
+        try{
+            for(Candidat c : candidats) candidates_disponibles.add((Candidat)c.clone());
+        }catch(CloneNotSupportedException e){}
 
         for (Electeur e : electeurs) {// for each des electeurs
             Candidat c = e.votePour(candidates_disponibles);

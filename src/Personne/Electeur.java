@@ -1,9 +1,11 @@
 package Personne;
 
 import Personne.Axe.Axe;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Electeur implements Personne {
+public class Electeur implements Personne, Cloneable {
     private static double distanceMax = 0.5;
     Axe pouvoir_achat, ecologie;
     
@@ -51,10 +53,18 @@ public class Electeur implements Personne {
     }
 
     @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        try{
+            Electeur e = new Electeur(pouvoir_achat.getValeur(), ecologie.getValeur());
+            return e;
+        }catch(Exception err) {throw new CloneNotSupportedException(err.getMessage());}
+    }
+
+    @Override
     public String toString() {
-        return "\n" + this.getClass() + "[\n"+
+        return "\n" + this.getClass() + "\n"+
             "   ecologie=" + ecologie + "\n" + 
-            "   pouvoir_achat=" + pouvoir_achat + 
-            "\n]";
+            "   pouvoir_achat=" + pouvoir_achat;
     }
 }

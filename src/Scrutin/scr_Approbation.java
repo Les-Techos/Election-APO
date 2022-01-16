@@ -17,10 +17,11 @@ public class scr_Approbation extends Scrutin{
         List<Candidat> candidats_res = new ArrayList<Candidat>(); //Résultat de l'élection
 
         for(Electeur e : electeurs){
-            List<Candidat> candidates_disponibles = new ArrayList<Candidat>(candidats); //Candidats restants à chaque étape
+            /*
+            //List<Candidat> candidates_disponibles = Candidat.cloneList((List<Electeur>)candidats); //Candidats restants à chaque étape
             while(candidates_disponibles.size() > 0){
                 //if(e.isNearBy(candidates_disponibles.get(0)))
-            }
+            }*/
         }
         
 
