@@ -10,7 +10,7 @@ public class scr_Borda extends Scrutin{
 
     public scr_Borda(List<Electeur> electeurs, List<Candidat> candidats) throws Exception {
         super(electeurs, candidats);
-        //TODO Auto-generated constructor stub
+        //TODO Auto-generated constructor stu
     }
 
     @Override
