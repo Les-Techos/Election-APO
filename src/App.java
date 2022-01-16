@@ -14,7 +14,7 @@ public class App {
             }
             scr_Alternatif sa = new scr_Alternatif(e, c);
             System.out.println(sa.getClassementCandidat());
-            
+            System.out.println(sa.getClassementCandidat());
         }catch(Exception err){
             err.printStackTrace();
         }

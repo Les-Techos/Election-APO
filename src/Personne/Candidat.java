@@ -2,11 +2,11 @@ package Personne;
 
 import java.util.List;
 
-public class Candidat extends Electeur implements Comparable{
+public class Candidat extends Electeur implements Comparable<Candidat>{
     int nbVoies = 0;
 
     @Override
-    public int compareTo(Object c) {
+    public int compareTo(Candidat c) {
         if(c instanceof Candidat){
             return nbVoies - ((Candidat)c).nbVoies;
         }
