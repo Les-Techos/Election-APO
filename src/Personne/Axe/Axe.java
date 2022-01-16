@@ -1,7 +1,5 @@
 package Personne.Axe;
 
-import java.math.*;
-
 public class Axe {
     private String nom;
     private double valeur;

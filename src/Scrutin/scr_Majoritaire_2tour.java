@@ -1,8 +1,8 @@
 package Scrutin;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Collections;
 import Scrutin.*;
 
 import Personne.Candidat;
@@ -10,13 +10,13 @@ import Personne.Electeur;
 
 public class scr_Majoritaire_2tour extends Scrutin{
 
-    public scr_Majoritaire_2tour(List<Electeur> electeurs, List<Candidat> candidats) throws Exception {
+    public scr_Majoritaire_2tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws Exception {
         super(electeurs, candidats);
         //TODO Auto-generated constructor stub
     }
 
     @Override
-    public List<Candidat> getClassementCandidat(){
+    public ArrayList<Candidat> getClassementCandidat(){
         // TODO Auto-generated method stub
         Scrutin sc1t =null;
 
@@ -26,7 +26,7 @@ public class scr_Majoritaire_2tour extends Scrutin{
         catch (Exception e) {} // on est jamais censé rentrer dedans
         
         List<Candidat> candidates_res1t = sc1t.getClassementCandidat();
-        List<Candidat> candidates_2best = new ArrayList<Candidat>();
+        HashSet<Candidat> candidates_2best = new HashSet<Candidat>();
         
         
         candidates_2best.add(candidates_res1t.get(0));

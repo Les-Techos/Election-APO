@@ -3,10 +3,11 @@ package Personne;
 import Personne.Axe.Axe;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Electeur implements Personne, Cloneable {
-    private static double distanceMax = 0.5;
+    private static double distanceMax = 3;
     Axe pouvoir_achat, ecologie;
     
 
@@ -29,7 +30,7 @@ public class Electeur implements Personne, Cloneable {
         return getDistanceA(p) < distanceMax;
     }
 
-    public Candidat votePour(List<Candidat> candidats){ /* A compléter !*/
+    public Candidat votePour(HashSet<Candidat> candidats){ /* A compléter !*/
         Candidat choisi = null;
         double distanceMin = Double.POSITIVE_INFINITY;
 

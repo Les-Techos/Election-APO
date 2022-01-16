@@ -1,5 +1,4 @@
 package Simulation;
-import Scrutin.*;
 import Personne.*;
 
 import java.util.ArrayList;
