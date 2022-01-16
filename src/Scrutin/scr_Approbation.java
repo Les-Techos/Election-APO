@@ -2,6 +2,7 @@ package Scrutin;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 
 import Personne.Candidat;
@@ -15,10 +16,10 @@ public class scr_Approbation extends Scrutin{
 
     @Override
     public ArrayList<Candidat> getClassementCandidat(){
-        ArrayList<Candidat> candidats_res = new ArrayList<Candidat>(); //Résultat de l'élection
+        HashSet<Candidat> candidats_res = Candidat.cloneList(candidats); //Résultat de l'élection
 
         for(Electeur e : electeurs){
-            HashSet<Candidat> candidates_disponibles = Candidat.cloneList(candidats);
+            HashSet<Candidat> candidates_disponibles = new HashSet<>(candidats_res);
             int nbVotes = (int) (Math.random() * (double) candidates_disponibles.size());
             for(int i = 0; i < nbVotes; i++){
                 Candidat choisi = e.votePour(candidates_disponibles);
@@ -27,6 +28,8 @@ public class scr_Approbation extends Scrutin{
             }
         }
         
-        return candidats_res;
+        ArrayList<Candidat> res = new ArrayList<Candidat>(candidats_res);
+        Collections.sort(res, Collections.reverseOrder());
+        return res;
     }
 }

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashSet;
 
 import Personne.*;
@@ -13,7 +12,7 @@ public class App {
                 c.add(new Candidat(Math.random(),Math.random()));
                 e.add(new Electeur(Math.random(),Math.random()));
             }
-            Scrutin sa = new scr_Alternatif(e, c);
+            Scrutin sa = new scr_Approbation(e, c);
             System.out.println(sa.getClassementCandidat());
             System.out.println(sa.getClassementCandidat());
         }catch(Exception err){

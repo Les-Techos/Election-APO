@@ -21,12 +21,20 @@ public abstract class Scrutin {
         this.candidats = new HashSet<Candidat>(candidats);
     }
 
-    
+    /**
+     * Vérifie que les listes d'électeurs et de candidats ne sont pas vides
+     * @param electeurs
+     * @param candidats
+     * @throws Exception
+     */
     public void verifieTableaux(final HashSet<Electeur> electeurs, final HashSet<Candidat> candidats) throws Exception{
         if(electeurs.size() == 0) throw new Exception("Tableau d'électeurs vide");
         if(candidats.size() == 0) throw new Exception("Tableau de candidats vide");
     }
 
+    /**
+     * @return Les electeurs
+     */
     public abstract ArrayList<Candidat> getClassementCandidat();
    
     public HashSet<Electeur> getElecteurs() {
