@@ -1,12 +1,11 @@
+package main;
 import java.util.HashSet;
 
 import Personne.*;
 import Scrutin.*;
 
-package main;
-
 public class App {
-    public static int main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         HashSet<Candidat> c = new HashSet<Candidat>();
         HashSet<Electeur> e = new HashSet<Electeur>();
         try{
@@ -20,7 +19,5 @@ public class App {
         }catch(Exception err){
             err.printStackTrace();
         }
-
-        return 0;
     }
 }
