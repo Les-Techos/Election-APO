@@ -11,10 +11,11 @@ public class App {
         try{
             for(int i = 0; i < 5; i++){
                 c.add(new Candidat(Math.random(),Math.random()));
+            }
+            for(int i=0; i<19;i++){
                 e.add(new Electeur(Math.random(),Math.random()));
             }
-            Scrutin sa = new scr_Approbation(e, c);
-            System.out.println(sa.getClassementCandidat());
+            Scrutin sa = new scr_Borda(e, c);
             System.out.println(sa.getClassementCandidat());
         }catch(Exception err){
             err.printStackTrace();
