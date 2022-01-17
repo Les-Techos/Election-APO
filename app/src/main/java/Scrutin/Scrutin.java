@@ -23,9 +23,9 @@ public abstract class Scrutin {
 
     /**
      * Vérifie que les listes d'électeurs et de candidats ne sont pas vides
-     * @param electeurs
-     * @param candidats
-     * @throws Exception
+     * @param electeurs : electeurs
+     * @param candidats : candidats
+     * @throws Exception : Un des tableau est vide
      */
     public void verifieTableaux(final HashSet<Electeur> electeurs, final HashSet<Candidat> candidats) throws Exception{
         if(electeurs.size() == 0) throw new Exception("Tableau d'électeurs vide");

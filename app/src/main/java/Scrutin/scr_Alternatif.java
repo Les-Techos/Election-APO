@@ -33,11 +33,11 @@ public class scr_Alternatif extends Scrutin {
     }
 
     /**
-     * @brief Retourne le classement des candidats par récursivité
-     * @param candidates_disponibles
-     * @param electeurs
-     * @param candidatToElecteur
-     * @return
+     * Retourne le classement des candidats par récursivité
+     * @param candidates_disponibles : LL
+     * @param electeurs : TEST
+     * @param candidatToElecteur : TEST
+     * @return : Le classement des candidats
      */
     public HashSet<Candidat> getClassementCandidat_rec(HashSet<Candidat> candidates_disponibles, final HashSet<Electeur> electeurs,
     HashMap<Candidat, HashSet<Electeur>> candidatToElecteur) {
