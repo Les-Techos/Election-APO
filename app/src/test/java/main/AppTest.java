@@ -4,14 +4,11 @@
 package main;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class AppTest {
     @Test public void appHasAGreeting() throws Exception {
         System.out.println("Test A");
-        try{
-            App.main(new String[5]);
-        }catch(Exception e){ throw e;}
+        App.main(new String[5]);
     }
 
     @Test public void testNeg() throws Exception {

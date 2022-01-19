@@ -1,6 +1,5 @@
 package Scrutin;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -10,7 +9,7 @@ import Personne.Electeur;
 
 public class scr_Approbation extends Scrutin{
 
-    public scr_Approbation(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws Exception {
+    public scr_Approbation(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
         super(electeurs, candidats);
     }
 

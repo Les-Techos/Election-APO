@@ -1,6 +1,5 @@
 package Scrutin;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Collections;
@@ -9,7 +8,7 @@ import Personne.Electeur;
 
 public class scr_Borda extends Scrutin{
 
-    public scr_Borda(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws Exception {
+    public scr_Borda(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
         super(electeurs, candidats);
         //TODO Auto-generated constructor stu
     }

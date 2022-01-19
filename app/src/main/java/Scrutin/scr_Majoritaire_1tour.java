@@ -1,8 +1,6 @@
 package Scrutin;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import Personne.Candidat;
 import Personne.Electeur;
 import java.util.Collections;
@@ -12,7 +10,7 @@ public class scr_Majoritaire_1tour extends Scrutin {
 
    
 
-    public scr_Majoritaire_1tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws Exception {
+    public scr_Majoritaire_1tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
         super(electeurs, candidats);
     }
 

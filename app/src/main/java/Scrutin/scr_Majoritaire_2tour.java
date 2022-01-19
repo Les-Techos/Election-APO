@@ -3,16 +3,13 @@ package Scrutin;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import Scrutin.*;
-
 import Personne.Candidat;
 import Personne.Electeur;
 
 public class scr_Majoritaire_2tour extends Scrutin{
 
-    public scr_Majoritaire_2tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws Exception {
+    public scr_Majoritaire_2tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{ 
         super(electeurs, candidats);
-        //TODO Auto-generated constructor stub
     }
 
     @Override

@@ -2,22 +2,22 @@ package Personne;
 
 import Personne.Axe.Axe;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 
-public class Electeur implements Personne, Cloneable {
+public class Electeur extends CSVReady implements Cloneable {
     private static double distanceMax = 3;
     Axe pouvoir_achat, ecologie;
     
+    public Electeur(double p_a, double eco) throws IllegalArgumentException{
+        this.pouvoir_achat = new Axe("pouvoir d'achat", p_a);
+        this.ecologie = new Axe("ecologie", eco);
+    }
 
-    public Electeur(double p_a, double eco) throws Exception {
-        try{
-            this.pouvoir_achat = new Axe("pouvoir d'achat", p_a);
-            this.ecologie = new Axe("ecologie", eco);
-        }catch(Exception e){
-            throw e;
-        }
+    public Electeur(String st) throws IllegalArgumentException{
+        super(st);
+        String[] value = st.split(",");
+        this.pouvoir_achat = new Axe("pouvoir d'achat", Double.parseDouble(value[0]));
+        this.ecologie = new Axe("ecologie", Double.parseDouble(value[1]));
     }
 
     public double getDistanceA(final Electeur p){
@@ -49,17 +49,19 @@ public class Electeur implements Personne, Cloneable {
         return distanceMax;
     }
 
-    public static void setDistanceMax(double distanceMax) {
+    public static void setDistanceMax(double distanceMax) throws IllegalArgumentException{
+        if(distanceMax < 0) throw new IllegalArgumentException("ditanceMax négative");
         Electeur.distanceMax = distanceMax;
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
+    protected Object clone(){
+        Electeur e = null;
         try{
-            Electeur e = new Electeur(pouvoir_achat.getValeur(), ecologie.getValeur());
-            return e;
-        }catch(Exception err) {throw new CloneNotSupportedException(err.getMessage());}
+            e = new Electeur(pouvoir_achat.getValeur(), ecologie.getValeur());
+        }catch(Exception err){}
+        
+        return e;
     }
 
     @Override
@@ -67,5 +69,10 @@ public class Electeur implements Personne, Cloneable {
         return "\n" + this.getClass() + "\n"+
             "   ecologie=" + ecologie + "\n" + 
             "   pouvoir_achat=" + pouvoir_achat;
+    }
+
+    @Override
+    public String toCSVString() {
+        return pouvoir_achat.toCSVString() + "," + ecologie.toCSVString();
     }
 }

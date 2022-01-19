@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import Personne.Candidat;
 import Personne.Electeur;
 
 public class scr_Alternatif extends Scrutin {
 
-    public scr_Alternatif(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws Exception {
+    public scr_Alternatif(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
         super(electeurs, candidats);
     }
 
