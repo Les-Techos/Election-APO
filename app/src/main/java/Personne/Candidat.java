@@ -38,6 +38,8 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
             try{c.setNbVoies(0);}catch(Exception e){}
     }
 
+    
+
     public static HashSet<Candidat> cloneList(HashSet<Candidat> ls) {
         HashSet<Candidat> res = new HashSet<Candidat>(); // Résultat de la fCandidat au élection
         for (Candidat c : ls)
@@ -63,6 +65,15 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
     @Override
     public String toCSVString() {
         return super.toCSVString() + "," + nbVoies;
+    }
+
+    public static double getPoidsCandidats() {
+        return poidsCandidats;
+    }
+
+    public static void setPoidsCandidats(double poidsCandidats) throws IllegalArgumentException{
+        if(poidsCandidats < 0 || poidsCandidats > 1) throw new IllegalArgumentException("Poids candidats hors limites");
+        Candidat.poidsCandidats = poidsCandidats;
     }
 
 }
