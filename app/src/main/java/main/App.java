@@ -12,7 +12,6 @@ public class App {
         HashSet<Candidat> c = new HashSet<Candidat>();
         HashSet<Electeur> e = new HashSet<Electeur>();
       
-        /*
         for (int i = 0; i < 5; i++) {
             try{
                 c.add(new Candidat(Math.random(),Math.random()));
@@ -23,13 +22,7 @@ public class App {
                 e.add(new Electeur(Math.random(),Math.random()));
             }catch(Exception err){err.printStackTrace();}
         }
-        */
-
-        try{
-            SaveManager.readIterableFrom(c, "ressources/cand.txt", Candidat.class);
-            System.out.println(c);
-        }catch(Exception err){}
-
+        
         Scrutin sa = new scr_Borda(e, c);  
 
         List<Candidat> res = sa.getClassementCandidat();

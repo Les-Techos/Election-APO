@@ -3,19 +3,36 @@
  */
 package main;
 
+import static org.junit.Assert.fail;
+
+import java.io.IOException;
+import java.util.HashSet;
+
 import org.junit.Test;
 
+import Personne.Candidat;
+import Personne.Electeur;
+import utils.SaveManager;
+
 public class AppTest {
-    @Test public void appHasAGreeting() throws Exception {
-        System.out.println("Test A");
-        App.main(new String[5]);
+    HashSet<Candidat> c = new HashSet<Candidat>();
+    HashSet<Electeur> e = new HashSet<Electeur>();
+
+    @Test
+    public void CreateAndSave() throws IOException {
+        for (int i = 0; i < 5; i++)
+            c.add(new Candidat(Math.random(), Math.random()));
+
+        for (int i = 0; i < 19; i++)
+            e.add(new Electeur(Math.random(), Math.random()));
+
+        SaveManager.saveIterableTo(c, "ressources/cand.txt");
+        SaveManager.saveIterableTo(e, "ressources/elect.txt");
     }
 
-    @Test public void testNeg() throws Exception {
-        System.out.println("Test B");
-        try{
-            App.main(new String[5]);
-        }catch(Exception e){ throw e;}
-        //fail("Tu es nul");
+    @Test
+    public void ReadFromFile() throws Exception {
+        SaveManager.readIterableFrom(c, "ressources/cand.txt", Candidat.class);
+        SaveManager.readIterableFrom(e, "ressources/elect.txt", Electeur.class);
     }
 }
