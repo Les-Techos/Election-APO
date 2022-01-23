@@ -27,3 +27,4 @@ app/build
 ressources/
 app/ressources/*
 .vscode/
+doxyDoc/
