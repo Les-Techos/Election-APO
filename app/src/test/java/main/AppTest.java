@@ -6,6 +6,7 @@ package main;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -15,6 +16,10 @@ import Personne.Candidat;
 import Personne.Electeur;
 import Scrutin.Scrutin;
 import Scrutin.scr_Alternatif;
+import Scrutin.scr_Approbation;
+import Scrutin.scr_Borda;
+import Scrutin.scr_Majoritaire_1tour;
+import Scrutin.scr_Majoritaire_2tour;
 import utils.SaveManager;
 
 public class AppTest {
@@ -23,10 +28,11 @@ public class AppTest {
 
     @Test
     public void Create() throws IOException {
-        for (int i = 0; i < 5; i++)
+        c.clear(); e.clear();
+        for (int i = 0; i < 150; i++)
             c.add(new Candidat(Math.random(), Math.random()));
 
-        for (int i = 0; i < 19; i++)
+        for (int i = 0; i < 1900; i++)
             e.add(new Electeur(Math.random(), Math.random()));
     }
 
@@ -37,22 +43,46 @@ public class AppTest {
         SaveManager.saveIterableTo(e, "ressources/elect.txt");
     }
 
-
     @Test
     public void ReadFromFile() throws Exception {
         SaveManager.readIterableFrom(c, "ressources/cand.txt", Candidat.class);
         SaveManager.readIterableFrom(e, "ressources/elect.txt", Electeur.class);
     }
 
+    /*
     @Test
     public void testScrutin() throws Exception {
-        //TODO Tester les autres scrutins
+        // TODO Tester les autres scrutins
         Create();
-        Scrutin sa = new scr_Alternatif(e, c); 
-        List<Candidat> res_1 = sa.getClassementCandidat();
-        List<Candidat> res_2 = sa.getClassementCandidat();
-        for(int i = 0; i < res_1.size(); i++){
-            if(!res_1.get(i).equals(res_2.get(i))) fail();
+        ArrayList<List<Candidat>> scrutins_res = new ArrayList<>();
+        Scrutin sa = null;
+
+        sa = new scr_Borda(e, c);
+        scrutins_res.add(sa.getClassementCandidat());
+        scrutins_res.add(sa.getClassementCandidat());
+
+        sa = new scr_Majoritaire_1tour(e, c);
+        scrutins_res.add(sa.getClassementCandidat());
+        scrutins_res.add(sa.getClassementCandidat());
+
+        sa = new scr_Majoritaire_2tour(e, c);
+        scrutins_res.add(sa.getClassementCandidat());
+        scrutins_res.add(sa.getClassementCandidat());
+
+        sa = new scr_Alternatif(e, c);
+        scrutins_res.add(sa.getClassementCandidat());
+        scrutins_res.add(sa.getClassementCandidat());
+
+        for (int i = 0; i < scrutins_res.size() / 2; i += 2) {
+
+            List<Candidat> res_1 = scrutins_res.get(i);
+            List<Candidat> res_2 = scrutins_res.get(i + 1);
+
+            for (int j = 0; j < res_1.size(); j++) {
+                if (!(res_1.get(j).compareTo(res_2.get(j)) == 0))
+                    fail();
+            }
         }
-    }
+
+    }*/
 }

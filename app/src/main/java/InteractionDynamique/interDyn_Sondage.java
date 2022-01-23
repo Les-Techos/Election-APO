@@ -7,6 +7,7 @@ import Personne.Candidat;
 import Personne.Electeur;
 import Scrutin.Scrutin;
 import Scrutin.scr_Alternatif;
+import Scrutin.scr_Sondage;
 
 
 public class interDyn_Sondage<Scrutin_Type extends Scrutin> implements InteractionDynamique {
@@ -25,22 +26,12 @@ public class interDyn_Sondage<Scrutin_Type extends Scrutin> implements Interacti
     @Override
     public void influencer(HashSet<Electeur> e, HashSet<Candidat> c) throws Exception {
 
-        ArrayList<Electeur> electDispo = new ArrayList<Electeur>(e);
-        ArrayList<Electeur> sondes = new ArrayList<Electeur>();
+        scr_Sondage<Scrutin_Type> sondage = new scr_Sondage<>(e,c,scr,nbSondes);
 
-        for (int i = 0; i < nbSondes; i++) { // Choisi aléatoirement des sondes parmis tous les electeurs
-            int index = (int) Math.random() % electDispo.size();
-            sondes.add(electDispo.get(index));
-            electDispo.remove(index);
-        }
-
-        Scrutin s = scr.getDeclaredConstructor(HashSet.class, HashSet.class).newInstance(new HashSet<Electeur>(sondes),
-                c); // Crée un Scrutin avec les sondés et le candidats
-
-        ArrayList<Candidat> candids = s.getClassementCandidat(); // Récupère le classement des candidats par les sondés
+        ArrayList<Candidat> candids = sondage.getClassementCandidat(); // Récupère le classement des candidats par les sondés
         candids = new ArrayList<Candidat>(candids.subList(0, nbCandidatsChoixElecteur - 1)); // Récupère la tête de liste
 
-        for (Electeur elect : sondes) { // On influence les électeurs
+        for (Electeur elect : e) { // On influence les électeurs
             Candidat choisi = elect.votePour(new HashSet<Candidat>(candids));
             switch (ms) { // Suivant le mode selectionné
                 case Simple:
