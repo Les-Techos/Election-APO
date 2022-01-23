@@ -3,6 +3,7 @@ package main;
 import java.util.HashSet;
 import java.util.List;
 
+import InteractionDynamique.inter_SocioPolitique;
 import Personne.*;
 import Scrutin.*;
 import utils.SaveManager;
@@ -23,14 +24,25 @@ public class App {
             }catch(Exception err){err.printStackTrace();}
         }
         
-        Scrutin sa = new scr_Borda(e, c);  
-
+        Scrutin sa = new scr_Borda(e, c); 
         List<Candidat> res = sa.getClassementCandidat();
-        
         try{
-            SaveManager.saveIterableTo(res, "ressources/rezultat.txt");
-            SaveManager.saveIterableTo(c, "ressources/cand.txt");
-            SaveManager.saveIterableTo(e, "ressources/elect.txt");
+            SaveManager.saveIterableTo(res, "ressources/rezultat_1.txt");
+            SaveManager.saveIterableTo(c, "ressources/cand_1.txt");
+            SaveManager.saveIterableTo(e, "ressources/elect_1.txt");
+        }catch(Exception err){
+
+        }
+
+        inter_SocioPolitique infl = new inter_SocioPolitique(0.3,0.3,0.3,0.5);
+        infl.influencer(e, c);
+
+        sa = new scr_Borda(e, c); 
+        res = sa.getClassementCandidat();
+        try{
+            SaveManager.saveIterableTo(res, "ressources/rezultat_2.txt");
+            SaveManager.saveIterableTo(c, "ressources/cand_2.txt");
+            SaveManager.saveIterableTo(e, "ressources/elect_2.txt");
         }catch(Exception err){
 
         }
