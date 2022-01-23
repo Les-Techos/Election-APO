@@ -6,9 +6,11 @@ import Personne.Electeur;
 import java.util.Collections;
 import java.util.HashSet;
 
-public class scr_Majoritaire_1tour extends Scrutin {
+/**
+ * Scrutin majoritaire à 1 tour
+ */
 
-   
+public class scr_Majoritaire_1tour extends Scrutin {
 
     public scr_Majoritaire_1tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
         super(electeurs, candidats);

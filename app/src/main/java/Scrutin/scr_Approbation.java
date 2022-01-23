@@ -7,6 +7,10 @@ import java.util.HashSet;
 import Personne.Candidat;
 import Personne.Electeur;
 
+/**
+ * Scrutin par approbation
+ */
+
 public class scr_Approbation extends Scrutin{
 
     public scr_Approbation(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{

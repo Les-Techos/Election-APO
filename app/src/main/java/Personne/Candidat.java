@@ -2,20 +2,22 @@ package Personne;
 
 import java.util.HashSet;
 
+/**
+ * Candidat
+ */
 public class Candidat extends Electeur implements Comparable<Candidat> {
     int nbVoies = 0;
     static double poidsCandidats = 0.00;
 
+    
     @Override
     public int compareTo(Candidat c) {
         if (c instanceof Candidat) {
             return nbVoies - ((Candidat) c).nbVoies;
         }
         return 0;
-    }
-
+    }  
     
-
     @Override
     public boolean equals(Object obj) {
         if(!(obj instanceof Candidat)) return false;
@@ -23,10 +25,20 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
         return super.equals((Electeur)obj) && nbVoies == other.nbVoies;
     }
 
+    /**
+     * 
+     * @param p_a : pouvoir d'achat
+     * @param eco : ecologie
+     * @throws IllegalArgumentException
+     */
     public Candidat(double p_a, double eco) throws IllegalArgumentException {
         super(p_a, eco);
     }
 
+    /**
+     * 
+     * @param st : tuple au format CSV contenant un Candidat
+     */
     public Candidat(String st){
         super(st);
         String[] value = st.split(",");
@@ -42,13 +54,20 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
         this.nbVoies = nbVoies;
     }
 
+    /**
+     * Reset les voies d'un Hashet Candidat
+     * @param candidats : Les candidats
+     */
     public static void resetNbVoies(HashSet<Candidat> candidats) {
         for (Candidat c : candidats)
             try{c.setNbVoies(0);}catch(Exception e){}
-    }
+    }    
 
-    
-
+    /**
+     * Clone une liste de candidats et revoie ce clone
+     * @param ls : liste source
+     * @return : liste clone
+     */
     public static HashSet<Candidat> cloneList(HashSet<Candidat> ls) {
         HashSet<Candidat> res = new HashSet<Candidat>(); // Résultat de la fCandidat au élection
         for (Candidat c : ls)
@@ -84,5 +103,4 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
         if(poidsCandidats < 0 || poidsCandidats > 1) throw new IllegalArgumentException("Poids candidats hors limites");
         Candidat.poidsCandidats = poidsCandidats;
     }
-
 }

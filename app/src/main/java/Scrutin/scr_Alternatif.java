@@ -7,6 +7,9 @@ import java.util.HashSet;
 import Personne.Candidat;
 import Personne.Electeur;
 
+/**
+ * Scrutin Alternatif
+ */
 public class scr_Alternatif extends Scrutin {
 
     public scr_Alternatif(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
@@ -33,9 +36,9 @@ public class scr_Alternatif extends Scrutin {
 
     /**
      * Retourne le classement des candidats par récursivité
-     * @param candidates_disponibles : LL
-     * @param electeurs : TEST
-     * @param candidatToElecteur : TEST
+     * @param candidates_disponibles : Candidats disponibles au rang de récursion
+     * @param electeurs : électeurs
+     * @param candidatToElecteur : Map de candidats vers ses électeurs
      * @return : Le classement des candidats
      */
     public HashSet<Candidat> getClassementCandidat_rec(HashSet<Candidat> candidates_disponibles, final HashSet<Electeur> electeurs,
@@ -61,9 +64,7 @@ public class scr_Alternatif extends Scrutin {
                         votants.add(e); // On ajoute juste le votants
                     }
                         
-                    if(votants.size() != choisi.getNbVoies()){
-                        System.exit(-1);
-                    }
+                    assert votants.size() == choisi.getNbVoies() : "Le candidats choisi a un nombre de votants différent de son nombre de voies";
                 }
             }
         }

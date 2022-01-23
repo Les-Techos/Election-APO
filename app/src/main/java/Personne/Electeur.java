@@ -4,10 +4,19 @@ import Personne.Axe.Axe;
 
 import java.util.HashSet;
 
+/**
+ * Electeur
+ */
 public class Electeur extends CSVReady implements Cloneable{
-    private static double distanceMax = 3;
+    private static double distanceMax = 3; //Appetance
     final Axe pouvoir_achat, ecologie;
 
+    /**
+     * 
+     * @param p_a : pouvoir d'achat
+     * @param eco : ecologie
+     * @throws IllegalArgumentException
+     */
     public Electeur(double p_a, double eco) throws IllegalArgumentException {
         this.pouvoir_achat = new Axe("pouvoir d'achat", p_a);
         this.ecologie = new Axe("ecologie", eco);
@@ -20,7 +29,6 @@ public class Electeur extends CSVReady implements Cloneable{
         this.ecologie = new Axe("ecologie", Double.parseDouble(value[1]));
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if(!(obj instanceof Electeur)) {return false;}
@@ -35,11 +43,21 @@ public class Electeur extends CSVReady implements Cloneable{
                         + Math.pow(ecologie.getValeur() - p.ecologie.getValeur(), 2));
     }
 
+    /**
+     * Détermine si l'objet courant est près de p suivant son appétance
+     * @param p : cible
+     * @return : estPrêtDe ?
+     */
     public boolean isNearBy(final Electeur p) {
         return getDistanceA(p) < distanceMax;
     }
 
-    public Candidat votePour(HashSet<Candidat> candidats) { /* A compléter ! */
+    /**
+     * Détermine le Candidat pour lequel l'objet courant va voter
+     * @param candidats : Les candidats disponibles
+     * @return : Le candidat choisi
+     */
+    public Candidat votePour(HashSet<Candidat> candidats) {
         Candidat choisi = null;
         double distanceMin = Double.POSITIVE_INFINITY;
 
@@ -54,14 +72,17 @@ public class Electeur extends CSVReady implements Cloneable{
         return choisi;
     }
 
+    /**
+     * Déplace l'objet courant d'une distance distanceAParcourir en déterminant les déplacements correspondants sur chaque axe.
+     * @param cible : Cible vers laquelle se déplacer
+     * @param distanceAParcourir : Distance à parcourir
+     */
     public void seDeplacerVers(Electeur cible, Double distanceAParcourir) {
         Double y1 = getEcologie().getValeur(), y2 = cible.getEcologie().getValeur(),
                 x1 = getPouvoir_achat().getValeur(), x2 = cible.getPouvoir_achat().getValeur();
 
         // Utilise Thales pour déterminer les rapports de longueur à aplliquer
         Double coeff = distanceAParcourir / getDistanceA(cible);
-
-        // TODO Traiter le seuil de répulsion électeurs
 
         x1 += coeff * (x2 - x1);
         y1 += coeff * (y2 - y1);

@@ -1,5 +1,9 @@
 package Personne;
 
+/**
+ * Prêt à être enregistrer sous CSV dans le disque
+ */
+
 public abstract class CSVReady {
     
     public CSVReady(){
@@ -10,6 +14,9 @@ public abstract class CSVReady {
 
     }
 
+    /**
+     * Converti l'objet courant en tuple CSV
+     * @return : ligne CSV
+     */
     public abstract String toCSVString();
-
 }

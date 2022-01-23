@@ -6,6 +6,9 @@ import java.util.List;
 import Personne.Candidat;
 import Personne.Electeur;
 
+/**
+ * Scrutin Majoritaire à 2 tours
+ */
 public class scr_Majoritaire_2tour extends Scrutin{
 
     public scr_Majoritaire_2tour(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{ 
@@ -14,7 +17,6 @@ public class scr_Majoritaire_2tour extends Scrutin{
 
     @Override
     public ArrayList<Candidat> getClassementCandidat(){
-        // TODO Auto-generated method stub
         Scrutin sc1t =null;
 
         try {

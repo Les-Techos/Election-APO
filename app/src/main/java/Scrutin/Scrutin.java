@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import Personne.*;
 
+/**
+ * Scrutin
+ */
 public abstract class Scrutin {
 
     protected HashSet<Electeur> electeurs = null;
@@ -18,6 +21,11 @@ public abstract class Scrutin {
         this.candidats = new HashSet<Candidat>(candidats);
     }
 
+    /**
+     * Vérifie si tous les attributs sont correctement initialisés
+     * @param set : Le tableau à vérifier
+     * @throws IllegalArgumentException : Le tableau a mal été instancié
+     */
     public void verifieTableau(final HashSet<?> set) throws IllegalArgumentException{
         if(set.size() == 0) throw new IllegalArgumentException("Tableau de taille nulle");
     }
@@ -27,6 +35,7 @@ public abstract class Scrutin {
      */
     public abstract ArrayList<Candidat> getClassementCandidat();
    
+    
     public HashSet<Electeur> getElecteurs() {
         return electeurs;
     }

@@ -6,15 +6,26 @@ import java.util.HashSet;
 import Personne.Candidat;
 import Personne.Electeur;
 
+/**
+ * Sondage
+ */
 public class scr_Sondage<Scrutin_Type extends Scrutin> extends Scrutin{
     Class<Scrutin_Type> scr;
     ArrayList<Electeur> sondes = null;
     int nbSondes = 0;
 
-    public scr_Sondage(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException {
+    private scr_Sondage(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException {
         super(electeurs, candidats);
     }
 
+    /**
+     * 
+     * @param electeurs : électeurs
+     * @param candidats : candidats 
+     * @param scr : Classe du scrutin à utiliser pour le sondage
+     * @param nbSondes : Nombre d'électeurs à sonder
+     * @throws IllegalArgumentException
+     */
     public scr_Sondage(HashSet<Electeur> electeurs, HashSet<Candidat> candidats, Class<Scrutin_Type> scr, int nbSondes) throws IllegalArgumentException {
         this(electeurs, candidats);
         setScr(scr);

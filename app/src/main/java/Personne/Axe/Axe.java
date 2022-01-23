@@ -2,22 +2,23 @@ package Personne.Axe;
 
 import Personne.CSVReady;
 
+/**
+ * Axe de préférence politique
+ */
 public class Axe extends CSVReady{
     private String nom;
     private double valeur;
 
 
-    /*
-        Constructeur de l'axe 
-        
-    */
+    /**
+     * 
+     * @param nom : Nom de l'axe
+     * @param valeur : Valeur de l'axe
+     * @throws IllegalArgumentException : Valeur de l'axe en dehors de [0;1]
+     */
     public Axe(String nom, double valeur) throws IllegalArgumentException{
         this.nom = nom;
         this.setValeur(valeur);
-    }
-
-    public Axe(String nom, String valeur){
-        super(valeur);
     }
 
     public double getValeur() {

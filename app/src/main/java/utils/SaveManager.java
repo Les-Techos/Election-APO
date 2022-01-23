@@ -10,8 +10,19 @@ import java.io.FileWriter;
 
 import Personne.CSVReady;
 
+/**
+ * Gestionnaire de sauvegarde pour collections CSVReady
+ */
 public class SaveManager {    
-    
+    /**
+     * Sauvegarde une collection CSVReady au format CSV
+     * @param <B> : Collection de CSVReady
+     * @param <A> : Item CSVReady
+     * @param ls : Collection à sauvegarder
+     * @param path : Chemin de sauvegarde
+     * @param items_class : Classe des items à sauvegarder
+     * @throws Exception
+     */
     public static <B extends Collection<A>, A extends CSVReady> void readIterableFrom(B ls, String path, Class<A> items_class) throws Exception {
         File file = new File(path);
         BufferedReader br
@@ -30,6 +41,14 @@ public class SaveManager {
         }
     }
 
+    /**
+     * Récupère une collection 
+     * @param <B> : Collection de CSVReady
+     * @param <A> : Item CSVReady
+     * @param ls : Collection à charger
+     * @param path : Chemin de chargement
+     * @throws IOException
+     */
     public static <B extends Collection<A>, A extends CSVReady> void saveIterableTo(B ls, String pathToFile) throws IOException {
         FileWriter writer = null;
         try{

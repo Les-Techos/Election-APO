@@ -49,40 +49,21 @@ public class AppTest {
         SaveManager.readIterableFrom(e, "ressources/elect.txt", Electeur.class);
     }
 
-    /*
     @Test
     public void testScrutin() throws Exception {
-        // TODO Tester les autres scrutins
         Create();
-        ArrayList<List<Candidat>> scrutins_res = new ArrayList<>();
         Scrutin sa = null;
 
         sa = new scr_Borda(e, c);
-        scrutins_res.add(sa.getClassementCandidat());
-        scrutins_res.add(sa.getClassementCandidat());
+        sa.getClassementCandidat();
 
         sa = new scr_Majoritaire_1tour(e, c);
-        scrutins_res.add(sa.getClassementCandidat());
-        scrutins_res.add(sa.getClassementCandidat());
+        sa.getClassementCandidat();
 
         sa = new scr_Majoritaire_2tour(e, c);
-        scrutins_res.add(sa.getClassementCandidat());
-        scrutins_res.add(sa.getClassementCandidat());
+        sa.getClassementCandidat();
 
         sa = new scr_Alternatif(e, c);
-        scrutins_res.add(sa.getClassementCandidat());
-        scrutins_res.add(sa.getClassementCandidat());
-
-        for (int i = 0; i < scrutins_res.size() / 2; i += 2) {
-
-            List<Candidat> res_1 = scrutins_res.get(i);
-            List<Candidat> res_2 = scrutins_res.get(i + 1);
-
-            for (int j = 0; j < res_1.size(); j++) {
-                if (!(res_1.get(j).compareTo(res_2.get(j)) == 0))
-                    fail();
-            }
-        }
-
-    }*/
+        sa.getClassementCandidat();
+    }
 }

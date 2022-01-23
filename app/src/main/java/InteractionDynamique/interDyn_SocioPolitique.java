@@ -23,11 +23,10 @@ public class interDyn_SocioPolitique implements InteractionDynamique{
      */
     public interDyn_SocioPolitique(Double seuilAttractionCandidats, Double seuilRepulsionCandidats,
             Double seuilAttractionElecteurs, Double distanceParcourue) {
-        //TODO Utiliser des setters
-        SeuilAttractionCandidats = seuilAttractionCandidats;
-        SeuilRepulsionCandidats = seuilRepulsionCandidats;
-        SeuilAttractionElecteurs = seuilAttractionElecteurs;
-        DistanceParcourue = distanceParcourue;
+        setDistanceParcourue(distanceParcourue);
+        setSeuilAttractionCandidats(seuilAttractionCandidats);
+        setSeuilAttractionElecteurs(seuilAttractionElecteurs);
+        setSeuilRepulsionCandidats(seuilRepulsionCandidats);
     }
 
     /**
@@ -63,4 +62,42 @@ public class interDyn_SocioPolitique implements InteractionDynamique{
             }
         }
     }
+
+    public Double getSeuilAttractionCandidats() {
+        return SeuilAttractionCandidats;
+    }
+
+    public void setSeuilAttractionCandidats(Double seuilAttractionCandidats) throws IllegalArgumentException {
+        if(seuilAttractionCandidats < 0) throw new IllegalArgumentException("Seuil Négatif");
+        SeuilAttractionCandidats = seuilAttractionCandidats;
+    }
+
+    public Double getSeuilRepulsionCandidats() {
+        return SeuilRepulsionCandidats;
+    }
+
+    public void setSeuilRepulsionCandidats(Double seuilRepulsionCandidats) throws IllegalArgumentException {
+        if(seuilRepulsionCandidats < 0) throw new IllegalArgumentException("Seuil Négatif");
+        SeuilRepulsionCandidats = seuilRepulsionCandidats;
+    }
+
+    public Double getSeuilAttractionElecteurs() {
+        return SeuilAttractionElecteurs;
+    }
+
+    public void setSeuilAttractionElecteurs(Double seuilAttractionElecteurs) throws IllegalArgumentException {
+        if(seuilAttractionElecteurs < 0) throw new IllegalArgumentException("Seuil Négatif");
+        SeuilAttractionElecteurs = seuilAttractionElecteurs;
+    }
+
+    public Double getDistanceParcourue() {
+        return DistanceParcourue;
+    }
+
+    public void setDistanceParcourue(Double distanceParcourue) {
+        if(distanceParcourue < 0) throw new IllegalArgumentException("Seuil Négatif");
+        DistanceParcourue = distanceParcourue;
+    }
+
+    
 }

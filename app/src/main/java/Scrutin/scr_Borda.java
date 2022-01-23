@@ -6,18 +6,18 @@ import java.util.Collections;
 import Personne.Candidat;
 import Personne.Electeur;
 
+/**
+ * Scrutin suivant la méthode de Borda
+ */
 public class scr_Borda extends Scrutin{
 
     public scr_Borda(HashSet<Electeur> electeurs, HashSet<Candidat> candidats) throws IllegalArgumentException{
         super(electeurs, candidats);
-        //TODO Auto-generated constructor stu
     }
 
     @Override
     public ArrayList<Candidat> getClassementCandidat(){
-        // TODO Auto-generated method stub
         HashSet<Candidat> candidates_dispo = Candidat.cloneList(candidats);
-        System.out.println(candidates_dispo.size());
         for (Electeur e : electeurs) {
             for (int i=candidates_dispo.size();i>0;i--){
                 Candidat c = e.votePour(candidates_dispo);
@@ -28,7 +28,5 @@ public class scr_Borda extends Scrutin{
         Collections.sort(candidates_res,Collections.reverseOrder()); 
         
         return candidates_res;
-    }
-
-    
+    }    
 }

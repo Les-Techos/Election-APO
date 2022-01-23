@@ -1,9 +1,6 @@
 package Simulation;
 import Personne.*;
 import Scrutin.*;
-import InteractionDynamique.*;
-import utils.SaveManager;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -11,8 +8,6 @@ public class Simulation {
     private HashSet<Candidat> c;
     private HashSet<Electeur> e;
     private Scrutin sa;
-    private InteractionDynamique ID;
-     
     public Simulation(){
         this.c = new HashSet<Candidat>();
         this.e = new HashSet<Electeur>();

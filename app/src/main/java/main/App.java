@@ -3,7 +3,6 @@ package main;
 import java.util.HashSet;
 import java.util.List;
 
-import InteractionDynamique.interDyn_SocioPolitique;
 import InteractionDynamique.interDyn_Sondage;
 import InteractionDynamique.modeSondage;
 import Personne.*;
