@@ -7,11 +7,14 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 
 import org.junit.Test;
 
 import Personne.Candidat;
 import Personne.Electeur;
+import Scrutin.Scrutin;
+import Scrutin.scr_Alternatif;
 import utils.SaveManager;
 
 public class AppTest {
@@ -19,20 +22,38 @@ public class AppTest {
     HashSet<Electeur> e = new HashSet<Electeur>();
 
     @Test
-    public void CreateAndSave() throws IOException {
+    public void Create() throws IOException {
         for (int i = 0; i < 5; i++)
             c.add(new Candidat(Math.random(), Math.random()));
 
         for (int i = 0; i < 19; i++)
             e.add(new Electeur(Math.random(), Math.random()));
+    }
 
+    
+
+    @Test
+    public void Save() throws Exception {
+        Create();
         SaveManager.saveIterableTo(c, "ressources/cand.txt");
         SaveManager.saveIterableTo(e, "ressources/elect.txt");
     }
+
 
     @Test
     public void ReadFromFile() throws Exception {
         SaveManager.readIterableFrom(c, "ressources/cand.txt", Candidat.class);
         SaveManager.readIterableFrom(e, "ressources/elect.txt", Electeur.class);
+    }
+
+    @Test
+    public void testName() throws Exception {
+        Create();
+        Scrutin sa = new scr_Alternatif(e, c); 
+        List<Candidat> res_1 = sa.getClassementCandidat();
+        List<Candidat> res_2 = sa.getClassementCandidat();
+        for(int i = 0; i < res_1.size(); i++){
+            if(!res_1.get(i).equals(res_2.get(i))) fail();
+        }
     }
 }
