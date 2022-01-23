@@ -3,7 +3,9 @@ package main;
 import java.util.HashSet;
 import java.util.List;
 
-import InteractionDynamique.inter_SocioPolitique;
+import InteractionDynamique.interDyn_SocioPolitique;
+import InteractionDynamique.interDyn_Sondage;
+import InteractionDynamique.modeSondage;
 import Personne.*;
 import Scrutin.*;
 import utils.SaveManager;
@@ -24,7 +26,7 @@ public class App {
             }catch(Exception err){err.printStackTrace();}
         }
         
-        Scrutin sa = new scr_Borda(e, c); 
+        Scrutin sa = new scr_Alternatif(e, c); 
         List<Candidat> res = sa.getClassementCandidat();
         try{
             SaveManager.saveIterableTo(res, "ressources/rezultat_1.txt");
@@ -33,11 +35,15 @@ public class App {
         }catch(Exception err){
 
         }
+        
+        interDyn_Sondage<scr_Alternatif> infl = new interDyn_Sondage<>(scr_Alternatif.class ,modeSondage.Simple, c.size(), e.size()/2);
+        try{
+            infl.influencer(e, c);
+        }catch(Exception err){
+            System.out.println("Err le constructeur du scrutin n'existe pas !");
+        }
 
-        inter_SocioPolitique infl = new inter_SocioPolitique(0.3,0.3,0.3,0.5);
-        infl.influencer(e, c);
-
-        sa = new scr_Borda(e, c); 
+        sa = new scr_Alternatif(e, c); 
         res = sa.getClassementCandidat();
         try{
             SaveManager.saveIterableTo(res, "ressources/rezultat_2.txt");

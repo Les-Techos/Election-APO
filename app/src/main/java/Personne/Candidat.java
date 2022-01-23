@@ -14,6 +14,15 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
         return 0;
     }
 
+    
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Candidat)) return false;
+        Candidat other = (Candidat) obj;
+        return super.equals((Electeur)obj) && nbVoies == other.nbVoies;
+    }
+
     public Candidat(double p_a, double eco) throws IllegalArgumentException {
         super(p_a, eco);
     }
