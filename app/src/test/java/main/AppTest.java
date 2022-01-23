@@ -30,8 +30,6 @@ public class AppTest {
             e.add(new Electeur(Math.random(), Math.random()));
     }
 
-    
-
     @Test
     public void Save() throws Exception {
         Create();
@@ -47,7 +45,8 @@ public class AppTest {
     }
 
     @Test
-    public void testName() throws Exception {
+    public void testScrutin() throws Exception {
+        //TODO Tester les autres scrutins
         Create();
         Scrutin sa = new scr_Alternatif(e, c); 
         List<Candidat> res_1 = sa.getClassementCandidat();

@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 
 import InteractionDynamique.interDyn_SocioPolitique;
+import InteractionDynamique.interDyn_Sondage;
+import InteractionDynamique.modeSondage;
 import Personne.*;
 import Scrutin.*;
 import utils.SaveManager;
@@ -33,9 +35,13 @@ public class App {
         }catch(Exception err){
 
         }
-
-        interDyn_SocioPolitique infl = new interDyn_SocioPolitique(0.3,0.3,0.3,0.5);
-        //infl.influencer(e, c);
+        
+        interDyn_Sondage<scr_Alternatif> infl = new interDyn_Sondage<>(scr_Alternatif.class ,modeSondage.Simple, c.size(), e.size()/2);
+        try{
+            infl.influencer(e, c);
+        }catch(Exception err){
+            System.out.println("Err le constructeur du scrutin n'existe pas !");
+        }
 
         sa = new scr_Alternatif(e, c); 
         res = sa.getClassementCandidat();
