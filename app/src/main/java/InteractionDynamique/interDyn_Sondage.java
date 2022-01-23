@@ -9,13 +9,22 @@ import Scrutin.Scrutin;
 import Scrutin.scr_Alternatif;
 import Scrutin.scr_Sondage;
 
-
+/**
+ * Influence des électeurs à partir d'un sondage choisi
+ */
 public class interDyn_Sondage<Scrutin_Type extends Scrutin> implements InteractionDynamique {
     Class<Scrutin_Type> scr;
     modeSondage ms = modeSondage.Simple;
     int nbCandidatsChoixElecteur;
     int nbSondes;
 
+    /**
+     * 
+     * @param scr : Classe du scrutin choisi
+     * @param ms : Mode de sondage
+     * @param nbCandidatsChoixElecteur : Nombre de Candidats à partir de la tête du sondage nécessaire au choix de chaque électeurs
+     * @param nbSondes : Nombre d'électeurs sondés
+     */
     public interDyn_Sondage(Class<Scrutin_Type> scr, modeSondage ms, int nbCandidatsChoixElecteur, int nbSondes) {
         this.scr = scr;
         this.ms = ms;
@@ -50,22 +59,47 @@ public class interDyn_Sondage<Scrutin_Type extends Scrutin> implements Interacti
         }
     }
 
+    /**
+     * Déplacement simple d'un électeur vers sa cible
+     * @param e : L'électeur à déplacer
+     * @param choisi : Le candidat choisi
+     */
     private void deplacementSimple(Electeur e, Candidat choisi) {
         e.seDeplacerVers(choisi, e.getDistanceA(choisi) / 4);
     }
 
+    /**
+     * Déplacement d'un électeur vers sa cible avec calcul d'utilité
+     * @param e : L'électeur à déplacer
+     * @param candids : Candidats à partir desquels calculer une utilité
+     * @param nbElecteurs : Nombre de voies total
+     */
     private void deplacementUtilite(Electeur e, ArrayList<Candidat> candids, int nbElecteurs) {
         Double utilite = 0.00;
         Candidat choisi = getCandidatAvecUtilite(e, candids, nbElecteurs, utilite);
         e.seDeplacerVers(choisi, e.getDistanceA(choisi) / 4);
     }
 
+    /**
+     * Déplacement d'un électeur vers sa cible proportionnelement à son utilité
+     * @param e : L'électeur à déplacer
+     * @param candids : Candidats à partir desquels calculer une utilité
+     * @param nbElecteurs : Nombre de voies total
+     */
     private void deplacementUtiliteMultiple(Electeur e, ArrayList<Candidat> candids, int nbElecteurs) {
         Double utilite = 0.00;
         Candidat choisi = getCandidatAvecUtilite(e, candids, nbElecteurs, utilite);
         e.seDeplacerVers(choisi, utilite * e.getDistanceA(choisi));
     }
 
+    /**
+     * Retourne le candidat ayant la plus grande utilité pour e
+     * @param e : Electeur considéré
+     * @param candids : Candidats
+     * @param nbElecteurs : Nombre de voies
+     * @param utilieMax : Utilité maximum
+     * @return : Candidat choisi
+     */
     private Candidat getCandidatAvecUtilite(Electeur e, ArrayList<Candidat> candids, int nbElecteurs, Double utilieMax){
         Candidat res = null;
 

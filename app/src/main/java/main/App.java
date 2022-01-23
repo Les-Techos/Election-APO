@@ -36,7 +36,7 @@ public class App {
 
         }
         
-        interDyn_Sondage<scr_Alternatif> infl = new interDyn_Sondage<>(scr_Alternatif.class , modeSondage.Simple, c.size(), e.size()/2);
+        interDyn_Sondage<scr_Majoritaire_1tour> infl = new interDyn_Sondage<>(scr_Majoritaire_1tour.class , modeSondage.Simple, c.size(), e.size()/2);
         try{
             infl.influencer(e, c);
             infl.influencer(e, c);

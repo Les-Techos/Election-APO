@@ -6,14 +6,24 @@ import java.util.HashSet;
 import Personne.Candidat;
 import Personne.Electeur;
 
+/**
+ * Interacation Dynamique par relation Sociopolitique
+ */
 public class interDyn_SocioPolitique implements InteractionDynamique{
     Double SeuilAttractionCandidats,
             SeuilRepulsionCandidats,
             SeuilAttractionElecteurs,
             DistanceParcourue;
-
+    /**
+     * 
+     * @param seuilAttractionCandidats : Distance jusqu'auquel les électeurs seront attiré par le candidat considéré
+     * @param seuilRepulsionCandidats   : Distance à partir duquel les électeurs seront repoussés par le candidat
+     * @param seuilAttractionElecteurs  : Distance jusqu'auquel les électeurs seront attiré par le électeurs considéré
+     * @param distanceParcourue : La distance à parcourir lors d'un déplacement
+     */
     public interDyn_SocioPolitique(Double seuilAttractionCandidats, Double seuilRepulsionCandidats,
             Double seuilAttractionElecteurs, Double distanceParcourue) {
+        //TODO Utiliser des setters
         SeuilAttractionCandidats = seuilAttractionCandidats;
         SeuilRepulsionCandidats = seuilRepulsionCandidats;
         SeuilAttractionElecteurs = seuilAttractionElecteurs;
@@ -23,9 +33,10 @@ public class interDyn_SocioPolitique implements InteractionDynamique{
     /**
      * Permet d'infulencer les électeurs selon le modèle Iznogoud
      * 
-     * @param elects
-     * @param cands
+     * @param elects : Electeurs à influencer
+     * @param cands : Candidats depuis lesquels influencer les électeurs
      */
+    @Override
     public void influencer(HashSet<Electeur> elects, HashSet<Candidat> cands) {
         for (Electeur e : elects) {
             Electeur cible = null;

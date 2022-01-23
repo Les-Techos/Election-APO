@@ -12,7 +12,7 @@ public class Simulation {
     private HashSet<Electeur> e;
     private Scrutin sa;
     private InteractionDynamique ID;
-    
+     
     public Simulation(){
         this.c = new HashSet<Candidat>();
         this.e = new HashSet<Electeur>();
