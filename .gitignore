@@ -25,6 +25,6 @@ hs_err_pid*
 
 app/build
 ressources/
-app/ressources/*
+
 .vscode/
 doxyDoc/

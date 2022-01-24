@@ -13,9 +13,11 @@ plugins {
 
 apply plugin: 'java'
 
+/*
 configurations {
     umlDoclet
 }
+*/
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -29,16 +31,16 @@ dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
 
-    dependencies {
-    umlDoclet "nl.talsmasoftware:umldoclet:2.0.15"
-}
+    //umlDoclet "nl.talsmasoftware:umldoclet:2.0.15"
 }
 
+/*
 javadoc {
     source = sourceSets.main.allJava
     options.docletpath = configurations.umlDoclet.files.asType(List)
     options.doclet = "nl.talsmasoftware.umldoclet.UMLDoclet"
 }
+*/
 
 application {
     // Define the main class for the application.
