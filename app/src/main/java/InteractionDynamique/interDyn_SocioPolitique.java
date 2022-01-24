@@ -56,7 +56,7 @@ public class interDyn_SocioPolitique implements InteractionDynamique{
                     e.seDeplacerVers(cible, -DistanceParcourue);
                 }
             } else if (cible instanceof Electeur) {
-                if(distanceToCible < SeuilAttractionElecteurs){
+                if(distanceToCible < SeuilAttractionElecteurs && ((Electeur)cible).getZoneGeographique() == e.getZoneGeographique()){
                     e.seDeplacerVers(cible, DistanceParcourue);
                 }
             }

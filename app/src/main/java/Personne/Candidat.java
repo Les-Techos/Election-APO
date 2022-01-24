@@ -8,7 +8,6 @@ import java.util.HashSet;
 public class Candidat extends Electeur implements Comparable<Candidat> {
     int nbVoies = 0;
     static double poidsCandidats = 0.00;
-
     
     @Override
     public int compareTo(Candidat c) {

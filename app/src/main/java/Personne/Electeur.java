@@ -8,6 +8,7 @@ import java.util.HashSet;
  * Electeur
  */
 public class Electeur extends CSVReady implements Cloneable{
+    int zoneGeographique = 0;
     private static double distanceMax = 3; //Appetance
     final Axe pouvoir_achat, ecologie;
 
@@ -140,5 +141,13 @@ public class Electeur extends CSVReady implements Cloneable{
 
     public Axe getEcologie() {
         return ecologie;
+    }
+
+    public int getZoneGeographique() {
+        return zoneGeographique;
+    }
+
+    public void setZoneGeographique(int zoneGeographique) {
+        this.zoneGeographique = zoneGeographique;
     }
 }

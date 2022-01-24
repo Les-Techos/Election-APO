@@ -1,7 +1,6 @@
 package utils;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Collection;
 import java.io.BufferedReader;
 import java.io.File;
@@ -46,7 +45,7 @@ public class SaveManager {
      * @param <B> : Collection de CSVReady
      * @param <A> : Item CSVReady
      * @param ls : Collection à charger
-     * @param path : Chemin de chargement
+     * @param pathToFile : Chemin de chargement
      * @throws IOException
      */
     public static <B extends Collection<A>, A extends CSVReady> void saveIterableTo(B ls, String pathToFile) throws IOException {

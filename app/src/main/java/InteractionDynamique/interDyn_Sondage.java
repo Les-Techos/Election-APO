@@ -6,7 +6,6 @@ import java.util.HashSet;
 import Personne.Candidat;
 import Personne.Electeur;
 import Scrutin.Scrutin;
-import Scrutin.scr_Alternatif;
 import Scrutin.scr_Sondage;
 
 /**

@@ -3,20 +3,14 @@
  */
 package main;
 
-import static org.junit.Assert.fail;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
-
 import org.junit.Test;
 
 import Personne.Candidat;
 import Personne.Electeur;
 import Scrutin.Scrutin;
 import Scrutin.scr_Alternatif;
-import Scrutin.scr_Approbation;
 import Scrutin.scr_Borda;
 import Scrutin.scr_Majoritaire_1tour;
 import Scrutin.scr_Majoritaire_2tour;
