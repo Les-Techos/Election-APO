@@ -94,31 +94,42 @@ public class Interfacetext {
 
 
     public void demarer() throws Exception {
-        
+        while (this.stay) {
         System.out.println("--- Bienvenue dans le Système d'élèction de Tim et Farès ---");
         System.out.println("Comment voulez vous demarer votre simulation :");
         System.out.println("0 -> avec des données aléatoires");
         System.out.println("1 -> rentrer mes données (Sous forme)");
+        System.out.println("2 -> QUITTER");
         int choix_0 = lectureIntClavier();
         this.menu_data(choix_0);
         this.menu_scrutin();
         System.out.println("Voulez vous des interaction dans votre simulation ");
-        System.out.println("0 -> OUI");
-        System.out.println("1 -> NON");
+        System.out.println("0 -> NON");
+        System.out.println("1 -> OUI");
         int choix_1 = lectureIntClavier();
         switch(choix_1){
             case 0:
-                this.menu_interdyn();
-                System.out.println(Monde.Lancerelection());
+                System.out.println(Monde.LancerElection());
             break;
             case 1:
-                System.out.println(Monde.Lancerelection());
-                System.out.println(Monde.Lancerelection());
+                this.menu_interdyn();
+                System.out.println("Interraction dyanmique affiché");
             break;
+            
         }
-      
+        System.out.println("voulez vous QUITTER ?");
+        System.out.println("0->NON //// 1-9 -> OUI");
+        int choix_2 = lectureIntClavier();
+        if(choix_2 != 0 ){
+            this.stay = false;
+        }
+    }
+        System.out.println("Au Revoir de Valéry Giscard d'Estaing");
+    
 
     }
+
+
 
     // retourn le menu est appelle la la fonction de menu
     public void menu_data(int choix_data) throws Exception {
@@ -140,6 +151,7 @@ public class Interfacetext {
                 Monde = new Simulation(c,e);
                 System.out.println("On a creer une monde avec " + Monde.toString());
                 break;
+           
         }
     }
 
@@ -189,7 +201,6 @@ public class Interfacetext {
         System.out.println("2 -> Alternatif");
         System.out.println("3 -> Approbation");
         System.out.println("4 -> Borda");
-        System.out.println("5 -> Retour");
         int choix_mode = lectureIntClavier();
         System.out.println(choix_mode);
         Scrutin res = Monde.choixScrutin(choix_mode);
