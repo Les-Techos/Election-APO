@@ -1,0 +1,343 @@
+\hypertarget{classPersonne_1_1Electeur}{}\doxysection{Personne.\+Electeur Class Reference}
+\label{classPersonne_1_1Electeur}\index{Personne.Electeur@{Personne.Electeur}}
+
+
+Inheritance diagram for Personne.\+Electeur\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPersonne_1_1Electeur__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Personne.\+Electeur\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPersonne_1_1Electeur__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPersonne_1_1Electeur_a278706558142a398cf5bcc663a0c213a}{Electeur}} (double p\+\_\+a, double eco)  throws Illegal\+Argument\+Exception 
+\item 
+\mbox{\hyperlink{classPersonne_1_1Electeur_aa64ef3d20ab31006af9d3b0686a1845a}{Electeur}} (String st)  throws Illegal\+Argument\+Exception 
+\item 
+boolean \mbox{\hyperlink{classPersonne_1_1Electeur_ad755db789519fc15fbe450ed43ed0998}{equals}} (Object obj)
+\item 
+double \mbox{\hyperlink{classPersonne_1_1Electeur_a7f5d2541f19b7310918a4df8232b52b1}{get\+DistanceA}} (final \mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} p)
+\item 
+boolean \mbox{\hyperlink{classPersonne_1_1Electeur_a72cb6a01ecf7da1504e33d26c919e330}{is\+Near\+By}} (final \mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} p)
+\item 
+\mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} \mbox{\hyperlink{classPersonne_1_1Electeur_a0cfcc529372add9825ea6edb5c1f2727}{vote\+Pour}} (Hash\+Set$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$ candidats)
+\item 
+void \mbox{\hyperlink{classPersonne_1_1Electeur_a55569fe6305b24fddad2ce8072b28074}{se\+Deplacer\+Vers}} (\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} cible, Double distance\+AParcourir)
+\item 
+String \mbox{\hyperlink{classPersonne_1_1Electeur_a5f3b3186eff44d5541b87ad7407cb1b3}{to\+String}} ()
+\item 
+String \mbox{\hyperlink{classPersonne_1_1Electeur_aafcca022a20f0c92fbb79206c7056a27}{to\+CSVString}} ()
+\item 
+\mbox{\hyperlink{classPersonne_1_1Axe_1_1Axe}{Axe}} \mbox{\hyperlink{classPersonne_1_1Electeur_a9076b822c98a74c5e5193063f31bb1a3}{get\+Pouvoir\+\_\+achat}} ()
+\item 
+\mbox{\hyperlink{classPersonne_1_1Axe_1_1Axe}{Axe}} \mbox{\hyperlink{classPersonne_1_1Electeur_a0205da05dbba360080b092db453dad84}{get\+Ecologie}} ()
+\item 
+int \mbox{\hyperlink{classPersonne_1_1Electeur_a9d1f6e18022489039bbfec73f5412a5f}{get\+Zone\+Geographique}} ()
+\item 
+void \mbox{\hyperlink{classPersonne_1_1Electeur_adf7e73ceb09996ff3901452c06c2d3cb}{set\+Zone\+Geographique}} (int zone\+Geographique)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classPersonne_1_1Electeur_a1d967dcf6487df7c511afa13d5475716}{get\+Distance\+Max}} ()
+\item 
+static void \mbox{\hyperlink{classPersonne_1_1Electeur_a035d54b1c9f587379d5a29f0d1c8bcd3}{set\+Distance\+Max}} (double \mbox{\hyperlink{classPersonne_1_1Electeur_a8a0f4a06f644a2ccc897606174d1e157}{distance\+Max}})  throws Illegal\+Argument\+Exception 
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Object \mbox{\hyperlink{classPersonne_1_1Electeur_a2d2699417015b29923cfa6c7d285cedb}{clone}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classPersonne_1_1Electeur_a8a0f4a06f644a2ccc897606174d1e157}{distance\+Max}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a278706558142a398cf5bcc663a0c213a}\label{classPersonne_1_1Electeur_a278706558142a398cf5bcc663a0c213a}} 
+\index{Personne.Electeur@{Personne.Electeur}!Electeur@{Electeur}}
+\index{Electeur@{Electeur}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{Electeur()}{Electeur()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Personne.\+Electeur.\+Electeur (\begin{DoxyParamCaption}\item[{double}]{p\+\_\+a,  }\item[{double}]{eco }\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+a} & \+: pouvoir d\textquotesingle{}achat \\
+\hline
+{\em eco} & \+: ecologie \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a278706558142a398cf5bcc663a0c213a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_aa64ef3d20ab31006af9d3b0686a1845a}\label{classPersonne_1_1Electeur_aa64ef3d20ab31006af9d3b0686a1845a}} 
+\index{Personne.Electeur@{Personne.Electeur}!Electeur@{Electeur}}
+\index{Electeur@{Electeur}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{Electeur()}{Electeur()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Personne.\+Electeur.\+Electeur (\begin{DoxyParamCaption}\item[{String}]{st }\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a2d2699417015b29923cfa6c7d285cedb}\label{classPersonne_1_1Electeur_a2d2699417015b29923cfa6c7d285cedb}} 
+\index{Personne.Electeur@{Personne.Electeur}!clone@{clone}}
+\index{clone@{clone}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily Object Personne.\+Electeur.\+clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPersonne_1_1Candidat_a6072958e9c1dbd4a2526f01e75360afc}{Personne.\+Candidat}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a2d2699417015b29923cfa6c7d285cedb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_ad755db789519fc15fbe450ed43ed0998}\label{classPersonne_1_1Electeur_ad755db789519fc15fbe450ed43ed0998}} 
+\index{Personne.Electeur@{Personne.Electeur}!equals@{equals}}
+\index{equals@{equals}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily boolean Personne.\+Electeur.\+equals (\begin{DoxyParamCaption}\item[{Object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPersonne_1_1Candidat_a1ea22113d920c43c5d229015aa113dfd}{Personne.\+Candidat}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_ad755db789519fc15fbe450ed43ed0998_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a7f5d2541f19b7310918a4df8232b52b1}\label{classPersonne_1_1Electeur_a7f5d2541f19b7310918a4df8232b52b1}} 
+\index{Personne.Electeur@{Personne.Electeur}!getDistanceA@{getDistanceA}}
+\index{getDistanceA@{getDistanceA}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{getDistanceA()}{getDistanceA()}}
+{\footnotesize\ttfamily double Personne.\+Electeur.\+get\+DistanceA (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a7f5d2541f19b7310918a4df8232b52b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a7f5d2541f19b7310918a4df8232b52b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a1d967dcf6487df7c511afa13d5475716}\label{classPersonne_1_1Electeur_a1d967dcf6487df7c511afa13d5475716}} 
+\index{Personne.Electeur@{Personne.Electeur}!getDistanceMax@{getDistanceMax}}
+\index{getDistanceMax@{getDistanceMax}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{getDistanceMax()}{getDistanceMax()}}
+{\footnotesize\ttfamily static double Personne.\+Electeur.\+get\+Distance\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a0205da05dbba360080b092db453dad84}\label{classPersonne_1_1Electeur_a0205da05dbba360080b092db453dad84}} 
+\index{Personne.Electeur@{Personne.Electeur}!getEcologie@{getEcologie}}
+\index{getEcologie@{getEcologie}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{getEcologie()}{getEcologie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPersonne_1_1Axe_1_1Axe}{Axe}} Personne.\+Electeur.\+get\+Ecologie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a0205da05dbba360080b092db453dad84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a9076b822c98a74c5e5193063f31bb1a3}\label{classPersonne_1_1Electeur_a9076b822c98a74c5e5193063f31bb1a3}} 
+\index{Personne.Electeur@{Personne.Electeur}!getPouvoir\_achat@{getPouvoir\_achat}}
+\index{getPouvoir\_achat@{getPouvoir\_achat}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{getPouvoir\_achat()}{getPouvoir\_achat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPersonne_1_1Axe_1_1Axe}{Axe}} Personne.\+Electeur.\+get\+Pouvoir\+\_\+achat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a9076b822c98a74c5e5193063f31bb1a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a9d1f6e18022489039bbfec73f5412a5f}\label{classPersonne_1_1Electeur_a9d1f6e18022489039bbfec73f5412a5f}} 
+\index{Personne.Electeur@{Personne.Electeur}!getZoneGeographique@{getZoneGeographique}}
+\index{getZoneGeographique@{getZoneGeographique}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{getZoneGeographique()}{getZoneGeographique()}}
+{\footnotesize\ttfamily int Personne.\+Electeur.\+get\+Zone\+Geographique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a72cb6a01ecf7da1504e33d26c919e330}\label{classPersonne_1_1Electeur_a72cb6a01ecf7da1504e33d26c919e330}} 
+\index{Personne.Electeur@{Personne.Electeur}!isNearBy@{isNearBy}}
+\index{isNearBy@{isNearBy}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{isNearBy()}{isNearBy()}}
+{\footnotesize\ttfamily boolean Personne.\+Electeur.\+is\+Near\+By (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Détermine si l\textquotesingle{}objet courant est près de p suivant son appétance 
+\begin{DoxyParams}{Parameters}
+{\em p} & \+: cible \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: est\+Prêt\+De ? 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a72cb6a01ecf7da1504e33d26c919e330_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a72cb6a01ecf7da1504e33d26c919e330_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a55569fe6305b24fddad2ce8072b28074}\label{classPersonne_1_1Electeur_a55569fe6305b24fddad2ce8072b28074}} 
+\index{Personne.Electeur@{Personne.Electeur}!seDeplacerVers@{seDeplacerVers}}
+\index{seDeplacerVers@{seDeplacerVers}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{seDeplacerVers()}{seDeplacerVers()}}
+{\footnotesize\ttfamily void Personne.\+Electeur.\+se\+Deplacer\+Vers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{cible,  }\item[{Double}]{distance\+AParcourir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Déplace l\textquotesingle{}objet courant d\textquotesingle{}une distance distance\+AParcourir en déterminant les déplacements correspondants sur chaque axe. 
+\begin{DoxyParams}{Parameters}
+{\em cible} & \+: Cible vers laquelle se déplacer \\
+\hline
+{\em distance\+AParcourir} & \+: Distance à parcourir \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a55569fe6305b24fddad2ce8072b28074_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a55569fe6305b24fddad2ce8072b28074_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a035d54b1c9f587379d5a29f0d1c8bcd3}\label{classPersonne_1_1Electeur_a035d54b1c9f587379d5a29f0d1c8bcd3}} 
+\index{Personne.Electeur@{Personne.Electeur}!setDistanceMax@{setDistanceMax}}
+\index{setDistanceMax@{setDistanceMax}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{setDistanceMax()}{setDistanceMax()}}
+{\footnotesize\ttfamily static void Personne.\+Electeur.\+set\+Distance\+Max (\begin{DoxyParamCaption}\item[{double}]{distance\+Max }\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPersonne_1_1Electeur_adf7e73ceb09996ff3901452c06c2d3cb}\label{classPersonne_1_1Electeur_adf7e73ceb09996ff3901452c06c2d3cb}} 
+\index{Personne.Electeur@{Personne.Electeur}!setZoneGeographique@{setZoneGeographique}}
+\index{setZoneGeographique@{setZoneGeographique}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{setZoneGeographique()}{setZoneGeographique()}}
+{\footnotesize\ttfamily void Personne.\+Electeur.\+set\+Zone\+Geographique (\begin{DoxyParamCaption}\item[{int}]{zone\+Geographique }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPersonne_1_1Electeur_aafcca022a20f0c92fbb79206c7056a27}\label{classPersonne_1_1Electeur_aafcca022a20f0c92fbb79206c7056a27}} 
+\index{Personne.Electeur@{Personne.Electeur}!toCSVString@{toCSVString}}
+\index{toCSVString@{toCSVString}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{toCSVString()}{toCSVString()}}
+{\footnotesize\ttfamily String Personne.\+Electeur.\+to\+CSVString (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converti l\textquotesingle{}objet courant en tuple CSV \begin{DoxyReturn}{Returns}
+\+: ligne CSV 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPersonne_1_1CSVReady_a09fc310bf71dd8a07214284aec9ba121}{Personne.\+CSVReady}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPersonne_1_1Candidat_a3655c64d8f88da14e9f39606ad84e76d}{Personne.\+Candidat}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_aafcca022a20f0c92fbb79206c7056a27_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a5f3b3186eff44d5541b87ad7407cb1b3}\label{classPersonne_1_1Electeur_a5f3b3186eff44d5541b87ad7407cb1b3}} 
+\index{Personne.Electeur@{Personne.Electeur}!toString@{toString}}
+\index{toString@{toString}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String Personne.\+Electeur.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPersonne_1_1Candidat_ae422b43a2d6fe27f7c5a769ddb2dfc88}{Personne.\+Candidat}}.
+
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a0cfcc529372add9825ea6edb5c1f2727}\label{classPersonne_1_1Electeur_a0cfcc529372add9825ea6edb5c1f2727}} 
+\index{Personne.Electeur@{Personne.Electeur}!votePour@{votePour}}
+\index{votePour@{votePour}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{votePour()}{votePour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} Personne.\+Electeur.\+vote\+Pour (\begin{DoxyParamCaption}\item[{Hash\+Set$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$}]{candidats }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Détermine le \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} pour lequel l\textquotesingle{}objet courant va voter 
+\begin{DoxyParams}{Parameters}
+{\em candidats} & \+: Les candidats disponibles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: Le candidat choisi 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a0cfcc529372add9825ea6edb5c1f2727_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPersonne_1_1Electeur_a0cfcc529372add9825ea6edb5c1f2727_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPersonne_1_1Electeur_a8a0f4a06f644a2ccc897606174d1e157}\label{classPersonne_1_1Electeur_a8a0f4a06f644a2ccc897606174d1e157}} 
+\index{Personne.Electeur@{Personne.Electeur}!distanceMax@{distanceMax}}
+\index{distanceMax@{distanceMax}!Personne.Electeur@{Personne.Electeur}}
+\doxysubsubsection{\texorpdfstring{distanceMax}{distanceMax}}
+{\footnotesize\ttfamily double Personne.\+Electeur.\+distance\+Max = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/\+Personne/\mbox{\hyperlink{Electeur_8java}{Electeur.\+java}}\end{DoxyCompactItemize}

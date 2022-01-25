@@ -198,9 +198,7 @@ public class Interfacetext {
                         distanceParcourue);
                 System.out.println(
                         "Donnez le nombre d'ittération (int) ou nombre de jour sur lesquelles seront influencer les electeurs");
-                int n = lectureIntClavier();
-                Monde.LancerElection();
-                Monde.influencer_sur_n(n);
+                Monde.setJourDinfluence(lectureIntClavier());
                 System.out.println("----- RESULTAT POST-INFLUENCE ----- \n"+Monde.LancerElection());
                 break;
             case 1:
@@ -210,8 +208,7 @@ public class Interfacetext {
                 int nbsonde = lectureIntClavier();
                 Monde.interraction_sondage(nbsonde);
                 System.out.println("Donnez le nombre d'ittération (int) ou nombre de jour sur lesquelles seront influencer les electeurs");
-                int m = lectureIntClavier();
-                Monde.influencer_sur_n(m);
+                Monde.setJourDinfluence(lectureIntClavier());
                 
                 System.out.println("----- RESULTAT PRE-INFLUENCE ----- \n"+Monde.LancerElection());
                 

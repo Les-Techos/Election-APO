@@ -1,0 +1,10 @@
+<map id="Personne.Electeur.votePour" name="Personne.Electeur.votePour">
+<area shape="rect" id="node1" title=" " alt="" coords="521,143,721,170"/>
+<area shape="rect" id="node2" href="$classScrutin_1_1scr__Approbation.html#a4acc446ac68b1da461bc32b8b13851cc" title=" " alt="" coords="254,5,455,47"/>
+<area shape="rect" id="node3" href="$classScrutin_1_1scr__Borda.html#a4d6e35a3bf1bffd8cb57b4a21ffe70b4" title=" " alt="" coords="236,71,473,112"/>
+<area shape="rect" id="node4" href="$classScrutin_1_1scr__Majoritaire__1tour.html#a80fedd9b80616294e671f6c1c7da7376" title=" " alt="" coords="243,136,466,177"/>
+<area shape="rect" id="node5" href="$classScrutin_1_1scr__Alternatif.html#a399e41989c7114f38e41a9171d7a9d61" title=" " alt="" coords="263,225,447,267"/>
+<area shape="rect" id="node7" href="$classInteractionDynamique_1_1interDyn__Sondage.html#a1a3c8be58d779c36fd34962ce692079f" title=" " alt="" coords="254,291,455,332"/>
+<area shape="rect" id="node6" href="$classScrutin_1_1scr__Alternatif.html#a7b20899daef8fa523ee71b2bf0e16125" title=" " alt="" coords="5,225,188,267"/>
+<area shape="rect" id="node8" href="$classmain_1_1App.html#abb2a7f848a2c3472160ec055180481f7" title=" " alt="" coords="36,298,157,325"/>
+</map>
