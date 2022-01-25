@@ -5,6 +5,8 @@ import InteractionDynamique.*;
 import utils.SaveManager;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -151,10 +153,10 @@ public class Simulation {
                 nbVoies_avant_influence.add(candid_avant_influence.getNbVoies());
                 resElection.put(candid_avant_influence.getCustom_hashCode(), nbVoies_avant_influence);
             }
-
+            if(interraction != null){
             interraction.influencer(this.e,this.c);
-
-            for(Candidat candid_avant_influence:  sa.getClassementCandidat()){      
+            
+            for(Candidat candid_avant_influence:  (sa.getClassementCandidat()) ){      
                 ArrayList<Integer> nombreDeVoies_candidat = resElection.get(candid_avant_influence.getCustom_hashCode());   
                 nombreDeVoies_candidat.add(candid_avant_influence.getNbVoies());
             }
@@ -163,7 +165,12 @@ public class Simulation {
             for(Integer candids_finis : resElection.keySet()){
                 res +="n°"+ candids_finis + " Candidat "+" avec (avant/après) : ("+ resElection.get(candids_finis).get(0) + "/" + resElection.get(candids_finis).get(1) + ") de voies \n";
             }
-
+            }else{
+                for(Candidat  r: sa.getClassementCandidat()){
+                    res  +="n°"+r.getCustom_hashCode() +" Candidat avec "+ r.getNbVoies()+ "\n" ;
+                }
+               
+            }
         }catch(Exception e){
             System.out.println(e);
         }

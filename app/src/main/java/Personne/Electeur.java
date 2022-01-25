@@ -107,7 +107,7 @@ public class Electeur extends CSVReady implements Cloneable{
 
     @Override
     public String toString() {
-        return 
+        return "    id="+this.custom_hashCode+"\n"+
              "   ecologie=" + ecologie.getValeur() + "\n" +
                 "   pouvoir_achat=" + pouvoir_achat.getValeur()+ "\n";
     }
