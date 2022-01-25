@@ -13,20 +13,14 @@ import Simulation.Simulation;
 import utils.SaveManager;
 
 public class Interfacetext {
-    private String errorMessage;
-    private Scanner sc;
+    
     private Simulation Monde;
     private boolean stay;
-   
-    private InteractionDynamique sondage_interaction;
-    private ArrayList<Candidat> comparaison_res;
     private boolean monde_init;
 
     public Interfacetext() {
-        this.errorMessage = null;
         this.stay = true;
         this.monde_init = false;
-        sondage_interaction = null;
         Monde = null;
         
     }
