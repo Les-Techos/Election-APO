@@ -7,6 +7,7 @@ import java.util.HashSet;
 public class Electeur extends CSVReady implements Cloneable{
     private static double distanceMax = 3;
     final Axe pouvoir_achat, ecologie;
+    
 
     public Electeur(double p_a, double eco) throws IllegalArgumentException {
         this.pouvoir_achat = new Axe("pouvoir d'achat", p_a);
@@ -103,9 +104,9 @@ public class Electeur extends CSVReady implements Cloneable{
 
     @Override
     public String toString() {
-        return "\n" + this.getClass() + "\n" +
-                "   ecologie=" + ecologie + "\n" +
-                "   pouvoir_achat=" + pouvoir_achat;
+        return 
+             "   ecologie=" + ecologie.getValeur() + "\n" +
+                "   pouvoir_achat=" + pouvoir_achat.getValeur()+ "\n";
     }
 
     @Override

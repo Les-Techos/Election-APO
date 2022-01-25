@@ -3,7 +3,6 @@ package Interface;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.Scanner;
 
 import InteractionDynamique.InteractionDynamique;
 import InteractionDynamique.interDyn_Sondage;
@@ -19,16 +18,19 @@ public class Interfacetext {
     private Simulation Monde;
     private boolean stay;
     private InteractionDynamique sondage_interaction;
+    private ArrayList<Candidat> comparaison_res;
+    private boolean monde_init;
 
     public Interfacetext() {
         this.errorMessage = null;
-        this.sc = new Scanner(System.in);
         this.stay = true;
-        this.sondage_interaction =null;
+        this.monde_init = false;
+        sondage_interaction = null;
         Monde = null;
+        
     }
 
-        /**
+    /**
      * Lit l'entrée entière au clavier et gère les exceptions
      * 
      * @return float : réel lu au clavier
@@ -50,7 +52,7 @@ public class Interfacetext {
         return DoubleInValue;
     }
 
-     /**
+    /**
      * Lit l'entrée entière au clavier et gère les exceptions
      * 
      * @return String : chjaîne de caractères lu au clavier
@@ -71,7 +73,7 @@ public class Interfacetext {
         return inValue;
     }
 
-     /**
+    /**
      * Lit l'entrée entière au clavier et gère les exceptions
      * 
      * @return int : l'entier lu au clavier
@@ -91,45 +93,42 @@ public class Interfacetext {
         return intInValue;
     }
 
-
-
     public void demarer() throws Exception {
-        while (this.stay) {
-        System.out.println("--- Bienvenue dans le Système d'élèction de Tim et Farès ---");
-        System.out.println("Comment voulez vous demarer votre simulation :");
-        System.out.println("0 -> avec des données aléatoires");
-        System.out.println("1 -> rentrer mes données (Sous forme)");
-        System.out.println("2 -> QUITTER");
-        int choix_0 = lectureIntClavier();
-        this.menu_data(choix_0);
-        this.menu_scrutin();
-        System.out.println("Voulez vous des interaction dans votre simulation ");
-        System.out.println("0 -> NON");
-        System.out.println("1 -> OUI");
-        int choix_1 = lectureIntClavier();
-        switch(choix_1){
-            case 0:
-                System.out.println(Monde.LancerElection());
-            break;
-            case 1:
-                this.menu_interdyn();
-                System.out.println("Interraction dyanmique affiché");
-            break;
-            
+        while (stay) {
+            System.out.println("--- Bienvenue dans le Système d'élèction de Tim et Farès ---");
+            System.out.println("Comment voulez vous demarer votre simulation :");
+            System.out.println("0 -> avec des données aléatoires");
+            System.out.println("1 -> rentrer mes données (Sous forme)");
+            int choix_0 = lectureIntClavier();
+            this.menu_data(choix_0);
+            while (monde_init) {
+                this.menu_scrutin();
+                System.out.println("Voulez vous des interaction dans votre simulation ");
+                System.out.println("0 -> NON");
+                System.out.println("1 -> OUI");
+                int choix_1 = lectureIntClavier();
+                switch (choix_1) {
+                    case 0:
+                        System.out.println(Monde.LancerElection());
+                        break;
+                    case 1:
+                        this.menu_interdyn();
+                        break;
+
+                }
+                System.out.println("voulez vous QUITTER ?");
+                System.out.println("0->NON //// 1-9 -> OUI");
+                int choix_2 = lectureIntClavier();
+                System.out.println(choix_2);
+                if (choix_2 != 0) {
+                    stay = false;
+                    monde_init = false;
+                }
+            }
         }
-        System.out.println("voulez vous QUITTER ?");
-        System.out.println("0->NON //// 1-9 -> OUI");
-        int choix_2 = lectureIntClavier();
-        if(choix_2 != 0 ){
-            this.stay = false;
-        }
-    }
         System.out.println("Au Revoir de Valéry Giscard d'Estaing");
-    
 
     }
-
-
 
     // retourn le menu est appelle la la fonction de menu
     public void menu_data(int choix_data) throws Exception {
@@ -148,19 +147,20 @@ public class Interfacetext {
                 System.out.println("---Rentrer le chemin d'accés au données de type Electeurs ---");
                 String path_electeurs = lectureStringClavier();
                 SaveManager.readIterableFrom(e, path_electeurs, Electeur.class);
-                Monde = new Simulation(c,e);
+                Monde = new Simulation(c, e);
                 System.out.println("On a creer une monde avec " + Monde.toString());
                 break;
-           
+
         }
+        monde_init = true;
     }
 
-    public void menu_interdyn() throws Exception{
+    public void menu_interdyn() throws Exception {
         System.out.println("--- Choisir comment influencer ?---");
         System.out.println("0 -> par interaction socio politique");
         System.out.println("1 -> par sondage");
         int choix_sond = lectureIntClavier();
-        switch(choix_sond){
+        switch (choix_sond) {
             case 0:
                 System.out.println("--- On va réaliser une interraction_social ---");
                 System.out.println("Donnez le seuil d'attraction Candidats (double e.g = 2.6) ");
@@ -171,27 +171,34 @@ public class Interfacetext {
                 double seuilAttractionElecteurs = lecturedoubleClavier();
                 System.out.println("Donnez la distance que peut parcourir un sonde (double e.g = 2.6) ");
                 double distanceParcourue = lecturedoubleClavier();
-                Monde.interraction_social(seuilAttractionCandidats, seuilRepulsionCandidats, seuilAttractionElecteurs, distanceParcourue);
-                System.out.println("Donnez le nombre d'ittération (int) ou nombre de jour sur lesquelles seront influencer les electeurs");
+                Monde.interraction_social(seuilAttractionCandidats, seuilRepulsionCandidats, seuilAttractionElecteurs,
+                        distanceParcourue);
+                System.out.println(
+                        "Donnez le nombre d'ittération (int) ou nombre de jour sur lesquelles seront influencer les electeurs");
                 int n = lectureIntClavier();
+                System.out.println("----- RESULTAT PRE-INFLUENCE ----- \n"+Monde.LancerElection());
                 Monde.influencer_sur_n(n);
+                System.out.println("----- RESULTAT POST-INFLUENCE ----- \n"+Monde.LancerElection());
                 break;
             case 1:
+                this.menu_modesondage();
                 System.out.println("--- On va réaliser une influence par sondage ---");
-                System.out.println("Donnez le nombre d'electeurs a sonde parmis "+ Monde.getE().size() +" ");
+                System.out.println("Donnez le nombre d'electeurs a sonde parmis " + Monde.getE().size() + " ");
                 int nbsonde = lectureIntClavier();
                 Monde.interraction_sondage(nbsonde);
+                System.out.println("----- RESULTAT PRE-INFLUENCE ----- \n"+Monde.LancerElection());
+                
                 break;
         }
     }
 
-
-    public void menu_modesondage(){
+    public void menu_modesondage() {
         System.out.println("0 -> Simple");
         System.out.println("1 -> utilite");
         System.out.println("2 -> utilite_multiple");
-        
-        
+        int choix_mode = lectureIntClavier();
+        Monde.choix_mode(choix_mode);
+
     }
 
     public Scrutin menu_scrutin() {

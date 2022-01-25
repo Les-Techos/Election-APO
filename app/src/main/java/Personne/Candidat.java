@@ -67,7 +67,7 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" +
+        return super.toString()  +
                 "   NbVoies : " + nbVoies + "\n\n";
     }
 
