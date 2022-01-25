@@ -43,16 +43,4 @@ public class AppTest {
         SaveManager.readIterableFrom(c, "ressources/cand.txt", Candidat.class);
         SaveManager.readIterableFrom(e, "ressources/elect.txt", Electeur.class);
     }
-
-    @Test
-    public void testScrutin() throws Exception {
-        //TODO Tester les autres scrutins
-        Create();
-        Scrutin sa = new scr_Alternatif(e, c); 
-        List<Candidat> res_1 = sa.getClassementCandidat();
-        List<Candidat> res_2 = sa.getClassementCandidat();
-        for(int i = 0; i < res_1.size(); i++){
-            if(!res_1.get(i).equals(res_2.get(i))) fail();
-        }
-    }
 }
