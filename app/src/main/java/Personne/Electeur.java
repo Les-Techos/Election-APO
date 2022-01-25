@@ -5,17 +5,20 @@ import Personne.Axe.Axe;
 import java.util.HashSet;
 
 public class Electeur extends CSVReady implements Cloneable{
+    private int custom_hashCode = 0;
     private static double distanceMax = 3;
     final Axe pouvoir_achat, ecologie;
     
 
     public Electeur(double p_a, double eco) throws IllegalArgumentException {
+        custom_hashCode = hashCode();
         this.pouvoir_achat = new Axe("pouvoir d'achat", p_a);
         this.ecologie = new Axe("ecologie", eco);
     }
 
     public Electeur(String st) throws IllegalArgumentException {
         super(st);
+        custom_hashCode = hashCode();
         String[] value = st.split(",");
         this.pouvoir_achat = new Axe("pouvoir d'achat", Double.parseDouble(value[0]));
         this.ecologie = new Axe("ecologie", Double.parseDouble(value[1]));
@@ -121,4 +124,13 @@ public class Electeur extends CSVReady implements Cloneable{
     public Axe getEcologie() {
         return ecologie;
     }
+
+    public int getCustom_hashCode() {
+        return custom_hashCode;
+    }
+
+    public void setCustom_hashCode(int custom_hashCode) {
+        this.custom_hashCode = custom_hashCode;
+    }
+    
 }

@@ -13,7 +13,7 @@ public class Simulation {
     private int nbSondes = 0;
     private HashSet<Candidat> c;
     private HashSet<Electeur> e;
-    private HashMap<Candidat, ArrayList<Integer>> resElection = new HashMap<Candidat, ArrayList<Integer>>();
+    private HashMap<Integer, ArrayList<Integer>> resElection = new HashMap<Integer, ArrayList<Integer>>();
 
     modeSondage ms = modeSondage.Simple;
     
@@ -149,19 +149,19 @@ public class Simulation {
             for(Candidat candid_avant_influence:  sa.getClassementCandidat()){
                 ArrayList<Integer> nbVoies_avant_influence = new ArrayList<>();
                 nbVoies_avant_influence.add(candid_avant_influence.getNbVoies());
-                resElection.put(candid_avant_influence, nbVoies_avant_influence);
+                resElection.put(candid_avant_influence.getCustom_hashCode(), nbVoies_avant_influence);
             }
 
             interraction.influencer(this.e,this.c);
 
-            for(Candidat candid_avant_influence:  sa.getClassementCandidat()){                
-                resElection.get(candid_avant_influence).add(candid_avant_influence.getNbVoies());
+            for(Candidat candid_avant_influence:  sa.getClassementCandidat()){      
+                ArrayList<Integer> nombreDeVoies_candidat = resElection.get(candid_avant_influence.getCustom_hashCode());   
+                nombreDeVoies_candidat.add(candid_avant_influence.getNbVoies());
             }
 
-            int i = 1;
-            for(Candidat candids_finis : resElection.keySet()){
-                res +="n°"+ i + " Candidat "+" avec (avant/après) : ("+ resElection.get(candids_finis).get(0) + "/" + resElection.get(candids_finis).get(1) + ") de voies \n";
-                i++;
+
+            for(Integer candids_finis : resElection.keySet()){
+                res +="n°"+ candids_finis + " Candidat "+" avec (avant/après) : ("+ resElection.get(candids_finis).get(0) + "/" + resElection.get(candids_finis).get(1) + ") de voies \n";
             }
 
         }catch(Exception e){

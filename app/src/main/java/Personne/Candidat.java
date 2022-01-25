@@ -51,8 +51,11 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
 
     public static HashSet<Candidat> cloneList(HashSet<Candidat> ls) {
         HashSet<Candidat> res = new HashSet<Candidat>(); // Résultat de la fCandidat au élection
-        for (Candidat c : ls)
+        for (Candidat c : ls){
             res.add((Candidat) c.clone());
+        }
+            
+            
         return res;
     }
 
@@ -61,6 +64,7 @@ public class Candidat extends Electeur implements Comparable<Candidat> {
         try {
             Candidat c = new Candidat(pouvoir_achat.getValeur(), ecologie.getValeur());
             c.setNbVoies(getNbVoies());
+            c.setCustom_hashCode(getCustom_hashCode());
             return c;
         } catch (Exception err) { return null;}
     }
