@@ -29,8 +29,7 @@ public class Electeur extends CSVReady implements Cloneable{
     public boolean equals(Object obj) {
         if(!(obj instanceof Electeur)) {return false;}
         Electeur other = (Electeur) obj;
-        return (pouvoir_achat.getValeur() == other.getPouvoir_achat().getValeur() && 
-                ecologie.getValeur() == other.getEcologie().getValeur());
+        return (hashCode() == other.getCustom_hashCode());
     }
 
     public double getDistanceA(final Electeur p) {
