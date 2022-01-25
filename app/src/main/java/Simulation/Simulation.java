@@ -16,7 +16,6 @@ public class Simulation {
     private int jourDinfluence = 0;
     private HashSet<Candidat> c;
     private HashSet<Electeur> e;
-    private HashMap<Integer, ArrayList<Integer>> resElection = new HashMap<Integer, ArrayList<Integer>>();
 
     modeSondage ms = modeSondage.Simple;
 
@@ -161,6 +160,7 @@ public class Simulation {
         try {
 
             if (interraction != null) {
+                HashMap<Integer, ArrayList<Integer>> resElection = new HashMap<Integer, ArrayList<Integer>>();
 
                 for (Candidat candid_avant_influence : sa.getClassementCandidat()) {
                     ArrayList<Integer> nbVoies_avant_influence = new ArrayList<>();
