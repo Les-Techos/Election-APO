@@ -23,6 +23,7 @@ public class demarageListenner implements ActionListener{
        
         Monde = new Simulation();
         DefaultListModel listmodel = new DefaultListModel<>(); 
+        listmodel.addElement("------Candidat de départ------");
         for ( Candidat c : Monde.getC()) {
             String res = "";
             res = "Candidat n° "+c.getCustom_hashCode()+" Axe \n ecologique " + c.getEcologie().getValeur() 
