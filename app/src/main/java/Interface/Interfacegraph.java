@@ -10,7 +10,10 @@ import javax.swing.event.ChangeListener;
 
 import org.checkerframework.checker.units.qual.s;
 
+import Interface.CustomComponent.DoubleSpinner;
 import Interface.actionListenner.ComboScrutinListenner;
+import Interface.actionListenner.LancerListenner;
+import Interface.actionListenner.LoadListenner;
 import Interface.actionListenner.demarageListenner;
 import Interface.actionListenner.fliflopListenner;
 import Interface.actionListenner.interragirListenner;
@@ -22,9 +25,12 @@ import javafx.scene.control.Slider;
 
 public class Interfacegraph extends JFrame {
 
-    private Simulation Monde;
+    private Simulation Monde=null;
     private String[] scrutin_type = {"majoritaire 1 tour","majoritaire 2 tour","Alternatif","Approbation","Borda"};
     private String test[] = { "NAN", "NAN", "NAN", "NAN", "NAN" };
+    private ComboScrutinListenner comboListener;
+    private LancerListenner lancerListener;
+    private LoadListenner loadlistenner;
 
     public Interfacegraph() {
 
@@ -81,11 +87,18 @@ public class Interfacegraph extends JFrame {
                // Set the label to be drawn
                slider_jour_inter.setLabelTable(position);
 
+        JLabel label_atr_c = new JLabel("Attraction candidat");
+        JLabel label_rep_c = new JLabel("Répulsion candidat");
+        JLabel label_atr_e = new JLabel("Attraction electeur");
+        JLabel label_d = new JLabel("distance à parcourir");
         JLabel label_slider = new JLabel("Sur combien de jour on influence");
         JLabel label_res = new JLabel("-------Message console-------");
         label_res.setForeground(Color.RED);
         
-       
+        JSpinner spn_atr_c = new DoubleSpinner();
+        JSpinner spn_rep_c = new DoubleSpinner();
+        JSpinner spn_atr_e = new DoubleSpinner();
+        JSpinner spn_d = new DoubleSpinner();
 
         JList list_1 = new JList(test); 
         JList list_2 = new JList(test);
@@ -156,18 +169,32 @@ public class Interfacegraph extends JFrame {
         menu_interraction.add(btn_sondage);
         menu_interraction.add(btn_social);
 
-        //ajout  components au panel sondage  
+        //ajout  components au panel commun de sous menu   
         fin_comune_sous_menu.add(label_slider);
         fin_comune_sous_menu.add(slider_jour_inter);
         fin_comune_sous_menu.add(btn_influence);
         
+        //ajout  components au panel interraction socialists
+        sous_menu_social.add(label_atr_c);
+        sous_menu_social.add(spn_atr_c);
+        sous_menu_social.add(label_rep_c);
+        sous_menu_social.add(spn_rep_c);
+        sous_menu_social.add(label_atr_e);
+        sous_menu_social.add(spn_atr_e);
+        sous_menu_social.add(label_d);
+        sous_menu_social.add(spn_d);
 
         
-        btn_demarer_rand.addActionListener(new demarageListenner(Monde, list_1,sim_strt));
+        btn_demarer_rand.addActionListener(new demarageListenner(this, list_1,sim_strt));
         btn_interact.addActionListener(new interragirListenner(menu_interraction,sous_menu_sondage,sous_menu_social ,fin_comune_sous_menu));
-        btn_social.addActionListener(new fliflopListenner(sous_menu_sondage,sous_menu_social,fin_comune_sous_menu));
-        btn_sondage.addActionListener(new fliflopListenner(sous_menu_social,sous_menu_sondage,fin_comune_sous_menu));
-        choix_scrutin.addActionListener(new ComboScrutinListenner(Monde, choix_scrutin));
+        btn_social.addActionListener(new fliflopListenner(sous_menu_social,sous_menu_sondage,fin_comune_sous_menu));
+        btn_sondage.addActionListener(new fliflopListenner(sous_menu_sondage,sous_menu_social,fin_comune_sous_menu));
+        comboListener = new ComboScrutinListenner (choix_scrutin);
+        choix_scrutin.addActionListener( comboListener );
+        lancerListener = new LancerListenner(list_2);
+        btn_lancer.addActionListener(lancerListener);
+        loadlistenner = new LoadListenner(affichageGraph);
+        btn_demarer_data.addActionListener(loadlistenner);
         
         
 
@@ -180,11 +207,16 @@ public class Interfacegraph extends JFrame {
         sous_menu_sondage.setVisible(false);
         sous_menu_social.setVisible(false);
         fin_comune_sous_menu.setVisible(false);
-
-        
-        
         
 
+
+    }
+
+    public void setMonde(Simulation M){
+        this.Monde = M;
+        comboListener.setMonde(M);
+        lancerListener.setMonde(M);
+        loadlistenner.setMonde(M);
     }
 
 }

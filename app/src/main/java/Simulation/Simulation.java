@@ -16,6 +16,7 @@ public class Simulation {
     private int jourDinfluence = 0;
     private HashSet<Candidat> c;
     private HashSet<Electeur> e;
+    private Scrutin sa;
 
     modeSondage ms = modeSondage.Simple;
 
@@ -35,7 +36,7 @@ public class Simulation {
         this.e = e;
     }
 
-    private Scrutin sa;
+    
 
     public String getSa() {
         return sa.toString();
@@ -193,11 +194,46 @@ public class Simulation {
         return res;
     }
 
-    public String LancerSondage() {
-        String res = "Resultat de l'election";
+
+    public String LancerElectiongraph() {
+        String res = "---Resultat de l'election--- \n";
         ArrayList<Candidat> liste_res = null;
+        try {
+
+            if (interraction != null) {
+                HashMap<Integer, ArrayList<Integer>> resElection = new HashMap<Integer, ArrayList<Integer>>();
+
+                for (Candidat candid_avant_influence : sa.getClassementCandidat()) {
+                    ArrayList<Integer> nbVoies_avant_influence = new ArrayList<>();
+                    nbVoies_avant_influence.add(candid_avant_influence.getNbVoies());
+                    resElection.put(candid_avant_influence.getCustom_hashCode(), nbVoies_avant_influence);
+                }
+
+                influencer_sur_n(jourDinfluence);
+
+                for (Candidat candid_avant_influence : (sa.getClassementCandidat())) {
+                    ArrayList<Integer> nombreDeVoies_candidat = resElection
+                            .get(candid_avant_influence.getCustom_hashCode());
+                    nombreDeVoies_candidat.add(candid_avant_influence.getNbVoies());
+                }
+
+                for (Integer candids_finis : resElection.keySet()) {
+                    res += "n°" + candids_finis + " Candidat " + " avec (avant/après) : ("
+                            + resElection.get(candids_finis).get(0) + "/" + resElection.get(candids_finis).get(1)
+                            + ") de voies \n";
+                }
+            } else {
+                for (Candidat r : sa.getClassementCandidat()) {
+                    res += "n°" + r.getCustom_hashCode() + " Candidat avec " + r.getNbVoies() + "\n";
+                }
+
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return res;
     }
+
 
     public int getJourDinfluence() {
         return jourDinfluence;

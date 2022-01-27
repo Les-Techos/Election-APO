@@ -13,8 +13,7 @@ public class ComboScrutinListenner implements ActionListener {
     private JComboBox chx_scrt;
     private Scrutin sa;
 
-    public ComboScrutinListenner(Simulation monde_crt, JComboBox choixScrutin) {
-        this.Monde = monde_crt;
+    public ComboScrutinListenner( JComboBox choixScrutin) {
         this.chx_scrt = choixScrutin;
     }
 
@@ -48,5 +47,9 @@ public class ComboScrutinListenner implements ActionListener {
         }
 
     }
+    public void setMonde(Simulation M){
+        this.Monde = M;
+    }
+
 
 }
