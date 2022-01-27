@@ -124,6 +124,7 @@ public class Interfacetext {
                     stay = false;
                     monde_init = false;
                 }
+                
                 if(stay){
                     System.out.println("voulez vous conservez votre simulation ?");
                     System.out.println("0->NON //// autre entier -> OUI");
