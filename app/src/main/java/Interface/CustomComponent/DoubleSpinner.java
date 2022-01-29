@@ -8,6 +8,7 @@ import javax.swing.event.ChangeListener;
 
 /// Classe prise sur Stack overflow  https://stackoverflow.com/questions/15176695/jspinner-in-double-format
 
+// c'est une classe tiré des JSpinner qui leur donne des doubles en paramétres
 public class DoubleSpinner extends JSpinner {
 
     private static final long serialVersionUID = 1L;

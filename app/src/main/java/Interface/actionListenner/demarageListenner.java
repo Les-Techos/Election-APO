@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 
 import Interface.Interfacegraph;
 import Personne.Candidat;
@@ -17,17 +18,20 @@ public class demarageListenner implements ActionListener{
     private JPanel panel_dbt0;
     private JPanel panel_dbt1;
     private Interfacegraph graph;
+    
 
     
     public demarageListenner(Interfacegraph graph, JList liste_candidat, JPanel panel_dbt0) {
         this.graph = graph;
         this.liste_candidat = liste_candidat;
         this.panel_dbt0 = panel_dbt0;
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Monde = new Simulation();
+        
         graph.setMonde(Monde);
         panel_dbt0.setVisible(true);
         Monde.setSa(Monde.choixScrutin(0));

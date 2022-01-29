@@ -89,6 +89,10 @@ public class Interfacetext {
     }
 
     // Fonction de base du menu gére l'arrêt de la simulation 
+      /**
+     * Vérifie que les listes d'électeurs et de candidats ne sont pas vides
+     * return void affiche dans la console 
+     */
     public void demarer() throws Exception {
         int compt_t = 0; // vérification du reset d'une simulation nouvelle données 
         while (stay) {
