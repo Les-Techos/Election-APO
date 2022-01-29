@@ -17,8 +17,11 @@ public class App {
     public static void main(String[] args) throws Exception{
         
         Interfacegraph fenetre = new Interfacegraph();
-        fenetre.setVisible(true);
+        
         //Interfacetext i = new Interfacetext();
+        //i.demarer();
+        fenetre.setVisible(true);
+        
         //i.demarer();
         /*
        

@@ -20,6 +20,10 @@ public class Simulation {
 
     modeSondage ms = modeSondage.Simple;
 
+      /**
+     * Getter et Setter des listes candidats et electeurs
+     */
+
     public HashSet<Candidat> getC() {
         return c;
     }
@@ -36,16 +40,21 @@ public class Simulation {
         this.e = e;
     }
 
-    
-
-    public String getSa() {
-        return sa.toString();
+    public int getJourDinfluence() {
+        return jourDinfluence;
     }
+
+    public void setJourDinfluence(int jourDinfluence) {
+        this.jourDinfluence = jourDinfluence;
+    }
+
+
+   
 
     public void setSa(Scrutin sa) {
         this.sa = sa;
     }
-
+// simulation sans paramétre permet de générer les 10 candidats aléatoirement comme les 100 electeurs
     public Simulation() {
         this.c = new HashSet<Candidat>();
         this.e = new HashSet<Electeur>();
@@ -76,12 +85,9 @@ public class Simulation {
 
     }
 
-    @Override
-    public String toString() {
-        return "Simulation [c=" + c.size() + ", e=" + e.size() + ", interraction=" + interraction + ", Type de scrutin="
-                + sa + "]";
-    }
 
+
+    // simulation quand en rentrant des paramétres
     public Simulation(HashSet<Candidat> c, HashSet<Electeur> e) {
         this.c = c;
         this.e = e;
@@ -140,6 +146,7 @@ public class Simulation {
                 seuilAttractionElecteurs, distanceParcourue);
     }
 
+    // creer l'interraction par sondage
     public void interraction_sondage(int nbsonde) throws Exception {
         interraction = new interDyn_Sondage(sa.getClass(), ms, this.c.size(), nbsonde);
     }
@@ -155,6 +162,9 @@ public class Simulation {
         SaveManager.saveIterableTo(this.e, path);
     }
 
+      /**
+     * Permet depuis la Simulation de lancer une election et renvoyer le String qui sera afficher dans les deux intefaces différentes
+     */
     public String LancerElection() {
         String res = "---Resultat de l'election--- \n";
         ArrayList<Candidat> liste_res = null;
@@ -195,53 +205,16 @@ public class Simulation {
     }
 
 
-    public String LancerElectiongraph() {
-        String res = "---Resultat de l'election--- \n";
-        ArrayList<Candidat> liste_res = null;
-        try {
 
-            if (interraction != null) {
-                HashMap<Integer, ArrayList<Integer>> resElection = new HashMap<Integer, ArrayList<Integer>>();
 
-                for (Candidat candid_avant_influence : sa.getClassementCandidat()) {
-                    ArrayList<Integer> nbVoies_avant_influence = new ArrayList<>();
-                    nbVoies_avant_influence.add(candid_avant_influence.getNbVoies());
-                    resElection.put(candid_avant_influence.getCustom_hashCode(), nbVoies_avant_influence);
-                }
 
-                influencer_sur_n(jourDinfluence);
-
-                for (Candidat candid_avant_influence : (sa.getClassementCandidat())) {
-                    ArrayList<Integer> nombreDeVoies_candidat = resElection
-                            .get(candid_avant_influence.getCustom_hashCode());
-                    nombreDeVoies_candidat.add(candid_avant_influence.getNbVoies());
-                }
-
-                for (Integer candids_finis : resElection.keySet()) {
-                    res += "n°" + candids_finis + " Candidat " + " avec (avant/après) : ("
-                            + resElection.get(candids_finis).get(0) + "/" + resElection.get(candids_finis).get(1)
-                            + ") de voies \n";
-                }
-            } else {
-                for (Candidat r : sa.getClassementCandidat()) {
-                    res += "n°" + r.getCustom_hashCode() + " Candidat avec " + r.getNbVoies() + "\n";
-                }
-
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return res;
+    // Les méthodes ToString  permette les test  et le débugage 
+    @Override
+    public String toString() {
+        return "Simulation [c=" + c.size() + ", e=" + e.size() + ", interraction=" + interraction + ", Type de scrutin="
+                + sa + "]";
     }
-
-
-    public int getJourDinfluence() {
-        return jourDinfluence;
+    public String getSa() {
+        return sa.toString();
     }
-
-    public void setJourDinfluence(int jourDinfluence) {
-        this.jourDinfluence = jourDinfluence;
-    }
-
-    
 }
