@@ -45,7 +45,7 @@ public class interDyn_SocioPolitique implements InteractionDynamique{
                 if (Math.random() < Candidat.getPoidsCandidats()) // Si influencer par un Candidat
                     cible = (new ArrayList<Candidat>(cands)).get(randomRank);
                 else // Si influencer par un autre Electeur
-                    cible = (new ArrayList<Electeur>(elects)).get(randomRank);
+                    cible = (new ArrayList<Electeur>(elects)).get(randomRank%elects.size());
             } while (cible == e);
 
             Double distanceToCible = e.getDistanceA(cible);

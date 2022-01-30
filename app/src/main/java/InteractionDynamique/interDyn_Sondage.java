@@ -37,7 +37,7 @@ public class interDyn_Sondage<Scrutin_Type extends Scrutin> implements Interacti
         scr_Sondage<Scrutin_Type> sondage = new scr_Sondage<>(e,c,scr,nbSondes);
 
         ArrayList<Candidat> candids = sondage.getClassementCandidat(); // Récupère le classement des candidats par les sondés
-        candids = new ArrayList<Candidat>(candids.subList(0, nbCandidatsChoixElecteur - 1)); // Récupère la tête de liste
+        candids = new ArrayList<Candidat>(candids.subList(0, Math.min(nbCandidatsChoixElecteur - 1,candids.size()))); // Récupère la tête de liste
 
         for (Electeur elect : e) { // On influence les électeurs
             Candidat choisi = elect.votePour(new HashSet<Candidat>(candids));
