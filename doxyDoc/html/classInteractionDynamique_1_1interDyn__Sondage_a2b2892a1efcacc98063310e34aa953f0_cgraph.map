@@ -1,6 +1,0 @@
-<map id="InteractionDynamique.interDyn_Sondage.getCandidatAvecUtilite" name="InteractionDynamique.interDyn_Sondage.getCandidatAvecUtilite">
-<area shape="rect" id="node1" title=" " alt="" coords="5,23,271,65"/>
-<area shape="rect" id="node2" href="$classPersonne_1_1Electeur.html#a7f5d2541f19b7310918a4df8232b52b1" title=" " alt="" coords="319,5,548,32"/>
-<area shape="rect" id="node4" href="$classPersonne_1_1Candidat.html#aabdd0b9b12f7f651016aa8ec98e9339d" title=" " alt="" coords="322,56,545,83"/>
-<area shape="rect" id="node3" href="$classPersonne_1_1Axe_1_1Axe.html#ac63be3129e2dd360b1009c657b9ecccc" title=" " alt="" coords="596,5,800,32"/>
-</map>
