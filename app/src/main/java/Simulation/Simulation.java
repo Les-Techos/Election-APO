@@ -217,12 +217,12 @@ public class Simulation {
                 for (Candidat candid_avant_influence : (sa.getClassementCandidat())) {
                     ArrayList<Integer> nombreDeVoies_candidat = resElection
                             .get(candid_avant_influence.getCustom_hashCode());
-                    nombreDeVoies_candidat.add(candid_avant_influence.getNbVoies());
+                    if(nombreDeVoies_candidat != null) nombreDeVoies_candidat.add(candid_avant_influence.getNbVoies());
                 }
 
                 for (Integer candids_finis : resElection.keySet()) {
                     res += "n°" + candids_finis + " Candidat " + " avec (avant/après) : ("
-                            + resElection.get(candids_finis).get(0) + "/" + resElection.get(candids_finis).get(1)
+                            + (resElection.get(candids_finis).size() >=1 ? resElection.get(candids_finis).get(0) : "0") + "/" + (resElection.get(candids_finis).size() >=2 ? resElection.get(candids_finis).get(1) : 0) 
                             + ") de voies \n";
                 }
             } else {
