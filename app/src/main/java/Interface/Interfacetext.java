@@ -156,7 +156,11 @@ public class Interfacetext {
 
         switch (choix_data) {
             case 0:
-                Monde = new Simulation();
+                System.out.println("Combien de candidats ? ");
+                int nb_candidat = lectureIntClavier();
+                System.out.println("Combien d'electeur ?");
+                int nb_electeur = lectureIntClavier();
+                Monde = new Simulation(nb_candidat, nb_electeur);
                 System.out.println("On a creer une monde avec " + Monde.toString());
                 break;
             case 1:

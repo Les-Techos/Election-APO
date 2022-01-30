@@ -22,6 +22,9 @@ public class LancerListenner implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+
+
+        
         // TODO Auto-generated method stub
         try{
             String res = "<html>" +Monde.LancerElection().replace("\n", "<br/>")+"</html>"; 

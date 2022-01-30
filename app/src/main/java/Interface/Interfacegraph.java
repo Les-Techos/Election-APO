@@ -14,6 +14,7 @@ import Interface.actionListenner.ComboScrutinListenner;
 import Interface.actionListenner.InfluenceListenner;
 import Interface.actionListenner.LancerListenner;
 import Interface.actionListenner.LoadCListenner;
+import Interface.actionListenner.ResetListenner;
 import Interface.actionListenner.SaveListenner;
 import Interface.actionListenner.SondageListenner;
 import Interface.actionListenner.demarageListenner;
@@ -40,6 +41,7 @@ public class Interfacegraph extends JFrame {
     private  InfluenceListenner influencelisteners;
     private  SondageListenner sondageListeners;
     private SaveListenner savelisteners;
+    private  ResetListenner resetlistener;
     
     public Interfacegraph() {
 
@@ -75,7 +77,7 @@ public class Interfacegraph extends JFrame {
 
         // création composant bouton
         
-        JButton btn_demarer_data = new JButton("Simulation depuis un fichier");
+        JButton btn_demarer_data = new JButton("Simulation fichier");
         JButton btn_demarer_rand = new JButton("Simulation aléatoire");
         JButton btn_save = new JButton("Sauvegarde");
         JButton btn_interact = new JButton("Interagir");
@@ -84,6 +86,7 @@ public class Interfacegraph extends JFrame {
         JButton btn_influence_social = new JButton("Influencer par social");
         JButton btn_social = new JButton("Par rencontre");
         JButton btn_lancer = new JButton("Lancer");
+        JButton btn_reset = new JButton("RESET");
 
         //SLIDER POUR les jours d'influence
 
@@ -117,6 +120,7 @@ public class Interfacegraph extends JFrame {
                slider_jour_inter_1.setLabelTable(position_1);
 
         JLabel label_atr_c = new JLabel("Attraction candidat");
+        JLabel label_candi_elec = new JLabel("candidats electeurs");
         JLabel label_rep_c = new JLabel("Répulsion candidat");
         JLabel label_atr_e = new JLabel("Attraction electeur");
         JLabel label_d = new JLabel("distance à parcourir");
@@ -127,8 +131,10 @@ public class Interfacegraph extends JFrame {
         JLabel label_res = new JLabel("-------Message console-------");
         label_res.setForeground(Color.RED);
 
-        JSpinner nbsonde = new JSpinner();                
-        
+        JSpinner nbsonde = new JSpinner(); 
+        JSpinner nb_electeur = new JSpinner();
+        JSpinner nb_candidat = new JSpinner();               
+    
         DoubleSpinner spn_atr_c = new DoubleSpinner();
         DoubleSpinner spn_rep_c = new DoubleSpinner();
         DoubleSpinner spn_atr_e = new DoubleSpinner();
@@ -146,17 +152,19 @@ public class Interfacegraph extends JFrame {
         // positionnement sur le fenetreprincipal 
         
         affichage_liste.setBounds(225,20,750,900);
-        menu_interraction.setBounds(5,210,210,110);
-        sim_strt.setBounds(5,120,210,80);
-        sous_menu_sondage.setBounds(5,330,210,310);
-        sous_menu_social.setBounds(5,330,210,310);
-        fin_comune_sous_menu.setBounds(5,650,210,110);
+        menu_interraction.setBounds(5,250,210,110);
+        sim_strt.setBounds(5,160,210,80);
+        sous_menu_sondage.setBounds(5,370,210,310);
+        sous_menu_social.setBounds(5,370,210,310);
         affichageGraph.setBounds(800,20,370,900);
         affichage_liste.setLayout(new GridLayout(2,1));
         menu_interraction.setLayout(null);
         sim_strt.setLayout(null);
-        btn_demarer_rand.setBounds(10, 20,200, 40);
-        btn_demarer_data.setBounds(10, 70, 200, 40);
+        nb_candidat.setBounds(75, 70,40, 20);
+        nb_electeur.setBounds(25, 70,40, 20);
+        label_candi_elec.setBounds(5,50,120,20);
+        btn_demarer_rand.setBounds(10, 10,200, 40);
+        btn_demarer_data.setBounds(10, 100, 200, 40);
         choix_scrutin.setBounds(5,10,200, 20);
         btn_interact.setBounds(5,35,200, 40);
         btn_social.setBounds(5,10,200,40);
@@ -164,6 +172,7 @@ public class Interfacegraph extends JFrame {
         label_res.setBounds(10, 800, 200, 40);
         btn_save.setBounds(10, 850, 200, 40);
         btn_lancer.setBounds(10, 900, 200, 40);
+        btn_reset.setBounds(990,900,200,40);
 
 
         // paramétres du composant e.g taille police
@@ -180,6 +189,8 @@ public class Interfacegraph extends JFrame {
         fenetreprincipal.add(menu_interraction);
         fenetreprincipal.add(sous_menu_sondage);
         fenetreprincipal.add(sous_menu_social);
+        fenetreprincipal.add(nb_candidat);
+        fenetreprincipal.add(nb_electeur);
     
         
         //ajout components a la fenetre principal 
@@ -188,6 +199,8 @@ public class Interfacegraph extends JFrame {
         fenetreprincipal.add(label_res);
         fenetreprincipal.add(btn_lancer);
         fenetreprincipal.add(btn_save);
+        fenetreprincipal.add(label_candi_elec);
+        fenetreprincipal.add(btn_reset);
         
 
         //ajout sims start componnent
@@ -231,7 +244,7 @@ public class Interfacegraph extends JFrame {
         sous_menu_social.add(btn_influence_social);
 
         // Listenner de tous les boutons  de l'interface graphique 
-        btn_demarer_rand.addActionListener(new demarageListenner(this, list_1,sim_strt));
+        btn_demarer_rand.addActionListener(new demarageListenner(this, list_1,sim_strt,nb_candidat,nb_electeur));
         btn_interact.addActionListener(new interragirListenner(menu_interraction,sous_menu_sondage,sous_menu_social ,fin_comune_sous_menu));
         btn_social.addActionListener(new fliflopListenner(sous_menu_social,sous_menu_sondage,fin_comune_sous_menu));
         btn_sondage.addActionListener(new fliflopListenner(sous_menu_sondage,sous_menu_social,fin_comune_sous_menu));
@@ -246,9 +259,11 @@ public class Interfacegraph extends JFrame {
         influencelisteners = new InfluenceListenner(slider_jour_inter,spn_atr_c,spn_rep_c,spn_atr_e,spn_d,list_2);
         btn_influence_social.addActionListener(influencelisteners);
         sondageListeners = new SondageListenner(nbsonde,slider_jour_inter_1,list_2);
-        btn_influence_sondage.addActionListener(influencelisteners);
+        btn_influence_sondage.addActionListener(sondageListeners);
         savelisteners = new SaveListenner();
         btn_save.addActionListener(savelisteners);
+        resetlistener = new ResetListenner(menu_interraction,sim_strt,sous_menu_social,sous_menu_sondage,list_1,list_2);
+        btn_reset.addActionListener(resetlistener);
         
         
         
@@ -262,7 +277,7 @@ public class Interfacegraph extends JFrame {
         sim_strt.setVisible(false);
         sous_menu_sondage.setVisible(false);
         sous_menu_social.setVisible(false);
-        fin_comune_sous_menu.setVisible(false);
+        
         
 
 
@@ -278,6 +293,7 @@ public class Interfacegraph extends JFrame {
         influencelisteners.setMonde(M);
         sondageListeners.setMonde(M);
         savelisteners.setMonde(M);
+        resetlistener.setMonde(M);
     }
 
 }

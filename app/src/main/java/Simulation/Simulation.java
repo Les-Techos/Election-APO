@@ -85,6 +85,39 @@ public class Simulation {
 
     }
 
+    public Simulation(int nb_c, int nb_e) {
+        this.c = new HashSet<Candidat>();
+        this.e = new HashSet<Electeur>();
+        for (int i = 0; i < nb_c; i++) {
+            
+                try {
+                    this.c.add(new Candidat(Math.random(), Math.random()));
+                } catch (Exception err) {
+                    err.printStackTrace();
+                }
+            
+        }
+
+        for (int i = 0; i < nb_e; i++) {
+            try {
+                this.e.add(new Electeur(Math.random(), Math.random()));
+            } catch (Exception err) {
+                err.printStackTrace();
+            }
+        }
+
+        System.out.println("---Liste candidat--- \n");
+        int i = 0;
+        for (Candidat c_res : c) {
+            i++;
+            System.out.println("Candidat " + i);
+            System.out.println(c_res.toString());
+            System.out.println("-------------------------");
+        }
+
+    }
+    
+
 
 
     // simulation quand en rentrant des paramétres
