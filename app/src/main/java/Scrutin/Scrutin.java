@@ -20,8 +20,7 @@ public abstract class Scrutin {
 
     /**
      * Vérifie que les listes d'électeurs et de candidats ne sont pas vides
-     * @param electeurs : electeurs
-     * @param candidats : candidats
+     * @param set : Set d'électeurs
      */
     public void verifieTableau(final HashSet<?> set) throws IllegalArgumentException{
         if(set.size() == 0) throw new IllegalArgumentException("Tableau de taille nulle");
