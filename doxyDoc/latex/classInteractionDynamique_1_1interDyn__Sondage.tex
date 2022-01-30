@@ -1,0 +1,272 @@
+\hypertarget{classInteractionDynamique_1_1interDyn__Sondage}{}\doxysection{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage\texorpdfstring{$<$}{<} Scrutin\+\_\+\+Type extends Scrutin \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classInteractionDynamique_1_1interDyn__Sondage}\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+
+
+Inheritance diagram for Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage\texorpdfstring{$<$}{<} Scrutin\+\_\+\+Type extends Scrutin \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classInteractionDynamique_1_1interDyn__Sondage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage\texorpdfstring{$<$}{<} Scrutin\+\_\+\+Type extends Scrutin \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a56b51fd6a879174403a33047b493d762}{inter\+Dyn\+\_\+\+Sondage}} (Class$<$ Scrutin\+\_\+\+Type $>$ scr, \mbox{\hyperlink{enumInteractionDynamique_1_1modeSondage}{mode\+Sondage}} ms, int nb\+Candidats\+Choix\+Electeur, int nb\+Sondes)
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a1a3c8be58d779c36fd34962ce692079f}{influencer}} (Hash\+Set$<$ \mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} $>$ e, Hash\+Set$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$ c)  throws Exception 
+\item 
+\mbox{\hyperlink{enumInteractionDynamique_1_1modeSondage}{mode\+Sondage}} \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_ac2e0d2bc9735e828681e26b7ff7a5123}{get\+Ms}} ()
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a99c036b59c65d4525ec46e8c59aa9582}{set\+Ms}} (\mbox{\hyperlink{enumInteractionDynamique_1_1modeSondage}{mode\+Sondage}} ms)
+\item 
+int \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a7305226e1b090947719f500c836cccb1}{get\+Nb\+Candids\+Mode\+Simple}} ()
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_ab8e2f71f5f997d66ecab51f83340ff89}{set\+Nb\+Candids\+Mode\+Simple}} (int nb\+Candids\+Mode\+Simple)
+\item 
+int \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a7a601a1e73342d183aee0d7b9468e444}{get\+Nb\+Sondes}} ()
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a5e0b08243bac5fd21e0e7879e508acda}{set\+Nb\+Sondes}} (int nb\+Sondes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a942abbd71d196f50dc5c4f8f98411106}{deplacement\+Simple}} (\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} e, \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} choisi)
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a75066435234f995f148519f1da33d2b2}{deplacement\+Utilite}} (\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} e, Array\+List$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$ candids, int nb\+Electeurs)
+\item 
+void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a18a8fb31bfc637e1420d7078d58f5e1c}{deplacement\+Utilite\+Multiple}} (\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} e, Array\+List$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$ candids, int nb\+Electeurs)
+\item 
+\mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage_a2b2892a1efcacc98063310e34aa953f0}{get\+Candidat\+Avec\+Utilite}} (\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} e, Array\+List$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$ candids, int nb\+Electeurs, Double utilie\+Max)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Influence des électeurs à partir d\textquotesingle{}un sondage choisi 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a56b51fd6a879174403a33047b493d762}\label{classInteractionDynamique_1_1interDyn__Sondage_a56b51fd6a879174403a33047b493d762}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!interDyn\_Sondage@{interDyn\_Sondage}}
+\index{interDyn\_Sondage@{interDyn\_Sondage}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{interDyn\_Sondage()}{interDyn\_Sondage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.\mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{inter\+Dyn\+\_\+\+Sondage}} (\begin{DoxyParamCaption}\item[{Class$<$ Scrutin\+\_\+\+Type $>$}]{scr,  }\item[{\mbox{\hyperlink{enumInteractionDynamique_1_1modeSondage}{mode\+Sondage}}}]{ms,  }\item[{int}]{nb\+Candidats\+Choix\+Electeur,  }\item[{int}]{nb\+Sondes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scr} & \+: Classe du scrutin choisi \\
+\hline
+{\em ms} & \+: Mode de sondage \\
+\hline
+{\em nb\+Candidats\+Choix\+Electeur} & \+: Nombre de Candidats à partir de la tête du sondage nécessaire au choix de chaque électeurs \\
+\hline
+{\em nb\+Sondes} & \+: Nombre d\textquotesingle{}électeurs sondés \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a942abbd71d196f50dc5c4f8f98411106}\label{classInteractionDynamique_1_1interDyn__Sondage_a942abbd71d196f50dc5c4f8f98411106}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!deplacementSimple@{deplacementSimple}}
+\index{deplacementSimple@{deplacementSimple}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{deplacementSimple()}{deplacementSimple()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.deplacement\+Simple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{e,  }\item[{\mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}}}]{choisi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Déplacement simple d\textquotesingle{}un électeur vers sa cible 
+\begin{DoxyParams}{Parameters}
+{\em e} & \+: L\textquotesingle{}électeur à déplacer \\
+\hline
+{\em choisi} & \+: Le candidat choisi \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a942abbd71d196f50dc5c4f8f98411106_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a942abbd71d196f50dc5c4f8f98411106_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a75066435234f995f148519f1da33d2b2}\label{classInteractionDynamique_1_1interDyn__Sondage_a75066435234f995f148519f1da33d2b2}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!deplacementUtilite@{deplacementUtilite}}
+\index{deplacementUtilite@{deplacementUtilite}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{deplacementUtilite()}{deplacementUtilite()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.deplacement\+Utilite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{e,  }\item[{Array\+List$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$}]{candids,  }\item[{int}]{nb\+Electeurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Déplacement d\textquotesingle{}un électeur vers sa cible avec calcul d\textquotesingle{}utilité 
+\begin{DoxyParams}{Parameters}
+{\em e} & \+: L\textquotesingle{}électeur à déplacer \\
+\hline
+{\em candids} & \+: Candidats à partir desquels calculer une utilité \\
+\hline
+{\em nb\+Electeurs} & \+: Nombre de voies total \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a75066435234f995f148519f1da33d2b2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a75066435234f995f148519f1da33d2b2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a18a8fb31bfc637e1420d7078d58f5e1c}\label{classInteractionDynamique_1_1interDyn__Sondage_a18a8fb31bfc637e1420d7078d58f5e1c}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!deplacementUtiliteMultiple@{deplacementUtiliteMultiple}}
+\index{deplacementUtiliteMultiple@{deplacementUtiliteMultiple}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{deplacementUtiliteMultiple()}{deplacementUtiliteMultiple()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.deplacement\+Utilite\+Multiple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{e,  }\item[{Array\+List$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$}]{candids,  }\item[{int}]{nb\+Electeurs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Déplacement d\textquotesingle{}un électeur vers sa cible proportionnelement à son utilité 
+\begin{DoxyParams}{Parameters}
+{\em e} & \+: L\textquotesingle{}électeur à déplacer \\
+\hline
+{\em candids} & \+: Candidats à partir desquels calculer une utilité \\
+\hline
+{\em nb\+Electeurs} & \+: Nombre de voies total \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a18a8fb31bfc637e1420d7078d58f5e1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a18a8fb31bfc637e1420d7078d58f5e1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a2b2892a1efcacc98063310e34aa953f0}\label{classInteractionDynamique_1_1interDyn__Sondage_a2b2892a1efcacc98063310e34aa953f0}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!getCandidatAvecUtilite@{getCandidatAvecUtilite}}
+\index{getCandidatAvecUtilite@{getCandidatAvecUtilite}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{getCandidatAvecUtilite()}{getCandidatAvecUtilite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.get\+Candidat\+Avec\+Utilite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}}}]{e,  }\item[{Array\+List$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$}]{candids,  }\item[{int}]{nb\+Electeurs,  }\item[{Double}]{utilie\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Retourne le candidat ayant la plus grande utilité pour e 
+\begin{DoxyParams}{Parameters}
+{\em e} & \+: Electeur considéré \\
+\hline
+{\em candids} & \+: Candidats \\
+\hline
+{\em nb\+Electeurs} & \+: Nombre de voies \\
+\hline
+{\em utilie\+Max} & \+: Utilité maximum \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: Candidat choisi 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a2b2892a1efcacc98063310e34aa953f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a2b2892a1efcacc98063310e34aa953f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_ac2e0d2bc9735e828681e26b7ff7a5123}\label{classInteractionDynamique_1_1interDyn__Sondage_ac2e0d2bc9735e828681e26b7ff7a5123}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!getMs@{getMs}}
+\index{getMs@{getMs}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{getMs()}{getMs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumInteractionDynamique_1_1modeSondage}{mode\+Sondage}} \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.get\+Ms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a7305226e1b090947719f500c836cccb1}\label{classInteractionDynamique_1_1interDyn__Sondage_a7305226e1b090947719f500c836cccb1}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!getNbCandidsModeSimple@{getNbCandidsModeSimple}}
+\index{getNbCandidsModeSimple@{getNbCandidsModeSimple}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{getNbCandidsModeSimple()}{getNbCandidsModeSimple()}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.get\+Nb\+Candids\+Mode\+Simple (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a7a601a1e73342d183aee0d7b9468e444}\label{classInteractionDynamique_1_1interDyn__Sondage_a7a601a1e73342d183aee0d7b9468e444}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!getNbSondes@{getNbSondes}}
+\index{getNbSondes@{getNbSondes}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{getNbSondes()}{getNbSondes()}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.get\+Nb\+Sondes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a1a3c8be58d779c36fd34962ce692079f}\label{classInteractionDynamique_1_1interDyn__Sondage_a1a3c8be58d779c36fd34962ce692079f}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!influencer@{influencer}}
+\index{influencer@{influencer}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{influencer()}{influencer()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.influencer (\begin{DoxyParamCaption}\item[{Hash\+Set$<$ \mbox{\hyperlink{classPersonne_1_1Electeur}{Electeur}} $>$}]{e,  }\item[{Hash\+Set$<$ \mbox{\hyperlink{classPersonne_1_1Candidat}{Candidat}} $>$}]{c }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Influence (Modifie) les électeurs en fonction d\textquotesingle{}eux mêmes et des candidats 
+\begin{DoxyParams}{Parameters}
+{\em e} & \+: Electeurs à influencer \\
+\hline
+{\em c} & \+: Candidats à partir desquels influencer les électeurs \char`\"{}e\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \+: Liste vide \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceInteractionDynamique_1_1InteractionDynamique_a5af8cfaeb1ee7f0ad80848858f4b214e}{Interaction\+Dynamique.\+Interaction\+Dynamique}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a1a3c8be58d779c36fd34962ce692079f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInteractionDynamique_1_1interDyn__Sondage_a1a3c8be58d779c36fd34962ce692079f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a99c036b59c65d4525ec46e8c59aa9582}\label{classInteractionDynamique_1_1interDyn__Sondage_a99c036b59c65d4525ec46e8c59aa9582}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!setMs@{setMs}}
+\index{setMs@{setMs}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{setMs()}{setMs()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.set\+Ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumInteractionDynamique_1_1modeSondage}{mode\+Sondage}}}]{ms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_ab8e2f71f5f997d66ecab51f83340ff89}\label{classInteractionDynamique_1_1interDyn__Sondage_ab8e2f71f5f997d66ecab51f83340ff89}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!setNbCandidsModeSimple@{setNbCandidsModeSimple}}
+\index{setNbCandidsModeSimple@{setNbCandidsModeSimple}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{setNbCandidsModeSimple()}{setNbCandidsModeSimple()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.set\+Nb\+Candids\+Mode\+Simple (\begin{DoxyParamCaption}\item[{int}]{nb\+Candids\+Mode\+Simple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classInteractionDynamique_1_1interDyn__Sondage_a5e0b08243bac5fd21e0e7879e508acda}\label{classInteractionDynamique_1_1interDyn__Sondage_a5e0b08243bac5fd21e0e7879e508acda}} 
+\index{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}!setNbSondes@{setNbSondes}}
+\index{setNbSondes@{setNbSondes}!InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$@{InteractionDynamique.interDyn\_Sondage$<$ Scrutin\_Type extends Scrutin $>$}}
+\doxysubsubsection{\texorpdfstring{setNbSondes()}{setNbSondes()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classInteractionDynamique_1_1interDyn__Sondage}{Interaction\+Dynamique.\+inter\+Dyn\+\_\+\+Sondage}}$<$ Scrutin\+\_\+\+Type extends \mbox{\hyperlink{classScrutin_1_1Scrutin}{Scrutin}} $>$.set\+Nb\+Sondes (\begin{DoxyParamCaption}\item[{int}]{nb\+Sondes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/\+Interaction\+Dynamique/\mbox{\hyperlink{interDyn__Sondage_8java}{inter\+Dyn\+\_\+\+Sondage.\+java}}\end{DoxyCompactItemize}

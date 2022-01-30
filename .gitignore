@@ -28,3 +28,10 @@ ressources/
 
 .vscode/
 doxyDoc/
+UML/Election_APO.vpp.*
+UML/*
+
+app/build
+ressources/
+app/ressources/*
+.vscode/

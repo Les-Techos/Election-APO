@@ -4,14 +4,12 @@ import Personne.Axe.Axe;
 
 import java.util.HashSet;
 
-/**
- * Electeur
- */
 public class Electeur extends CSVReady implements Cloneable{
     int zoneGeographique = 0;
-    private static double distanceMax = 3; //Appetance
+    private int custom_hashCode = 0;
+    private static double distanceMax = 3;
     final Axe pouvoir_achat, ecologie;
-
+    
     /**
      * 
      * @param p_a : pouvoir d'achat
@@ -19,12 +17,14 @@ public class Electeur extends CSVReady implements Cloneable{
      * @throws IllegalArgumentException
      */
     public Electeur(double p_a, double eco) throws IllegalArgumentException {
+        custom_hashCode = hashCode();
         this.pouvoir_achat = new Axe("pouvoir d'achat", p_a);
         this.ecologie = new Axe("ecologie", eco);
     }
 
     public Electeur(String st) throws IllegalArgumentException {
         super(st);
+        custom_hashCode = hashCode();
         String[] value = st.split(",");
         this.pouvoir_achat = new Axe("pouvoir d'achat", Double.parseDouble(value[0]));
         this.ecologie = new Axe("ecologie", Double.parseDouble(value[1]));
@@ -34,8 +34,7 @@ public class Electeur extends CSVReady implements Cloneable{
     public boolean equals(Object obj) {
         if(!(obj instanceof Electeur)) {return false;}
         Electeur other = (Electeur) obj;
-        return (pouvoir_achat.getValeur() == other.getPouvoir_achat().getValeur() && 
-                ecologie.getValeur() == other.getEcologie().getValeur());
+        return (hashCode() == other.getCustom_hashCode());
     }
 
     public double getDistanceA(final Electeur p) {
@@ -125,9 +124,9 @@ public class Electeur extends CSVReady implements Cloneable{
 
     @Override
     public String toString() {
-        return "\n" + this.getClass() + "\n" +
-                "   ecologie=" + ecologie + "\n" +
-                "   pouvoir_achat=" + pouvoir_achat;
+        return "    id="+this.custom_hashCode+"\n"+
+             "   ecologie=" + ecologie.getValeur() + "\n" +
+                "   pouvoir_achat=" + pouvoir_achat.getValeur()+ "\n";
     }
 
     @Override
@@ -150,4 +149,12 @@ public class Electeur extends CSVReady implements Cloneable{
     public void setZoneGeographique(int zoneGeographique) {
         this.zoneGeographique = zoneGeographique;
     }
+    public int getCustom_hashCode() {
+        return custom_hashCode;
+    }
+
+    public void setCustom_hashCode(int custom_hashCode) {
+        this.custom_hashCode = custom_hashCode;
+    }
+    
 }

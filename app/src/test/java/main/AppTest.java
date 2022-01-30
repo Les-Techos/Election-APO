@@ -5,6 +5,8 @@ package main;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
+
 import org.junit.Test;
 
 import Personne.Candidat;
@@ -36,6 +38,7 @@ public class AppTest {
         SaveManager.saveIterableTo(c, "ressources/cand.txt");
         SaveManager.saveIterableTo(e, "ressources/elect.txt");
     }
+
 
     @Test
     public void ReadFromFile() throws Exception {

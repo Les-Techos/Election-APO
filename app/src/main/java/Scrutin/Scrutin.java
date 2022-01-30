@@ -53,4 +53,5 @@ public abstract class Scrutin {
         verifieTableau(candidats);
         this.candidats = candidats;
     }
+
 }
