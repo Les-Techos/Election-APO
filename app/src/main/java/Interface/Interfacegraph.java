@@ -268,7 +268,12 @@ public class Interfacegraph extends JFrame {
         
         
         
-
+        ((JSpinner.DefaultEditor) nb_candidat.getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor) nb_electeur.getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor) spn_atr_c.getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor) spn_atr_e.getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor) spn_rep_c.getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor) spn_d.getEditor()).getTextField().setEditable(false);
 
         
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
