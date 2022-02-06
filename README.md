@@ -1,6 +1,6 @@
 ## Getting Started
 
-Bienvenu sur le dépôt Election-APO ! Ce dernier contient un projet de simulation d'élection réalisé par __Farès Zaroui__ et __Tim Kosak__.
+Bienvenue sur le dépôt Election-APO ! Ce dernier contient un projet de simulation d'élection réalisé par __Farès Zaroui__ et __Tim Kosak__.
 
 ## How to
 
